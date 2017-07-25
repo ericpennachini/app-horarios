@@ -13,6 +13,7 @@ namespace appHorarios
     {
         private ArchivoRegistro _archivoReg;
         private Boolean _nuevoRegEnCurso;
+        private Timer _timerAlerta;
 
         public Form1()
         {
@@ -20,6 +21,7 @@ namespace appHorarios
             _archivoReg = new ArchivoRegistro();
             _archivoReg.AbrirArchivo();
             _nuevoRegEnCurso = false;
+            _timerAlerta = new Timer() { Interval = 1500 };
         }
 
         private void ReinicializarVentana()
@@ -86,10 +88,23 @@ namespace appHorarios
                 case 0:
                     break;
                 case 1:
+                    if (_nuevoRegEnCurso == true)
+                    {
+                        labelAlerta.Visible = true;
+                        _timerAlerta.Tick += new EventHandler(OnTimerTick);
+                        _timerAlerta.Start();
+                        tabControl1.SelectedIndex = 0;
+                    }
                     break;
                 case 2:
                     break;
             }
+        }
+
+        private void OnTimerTick(Object sender, EventArgs e)
+        {
+            labelAlerta.Visible = false;
+            _timerAlerta.Stop();
         }
     }
 }

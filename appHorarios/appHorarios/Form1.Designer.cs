@@ -29,17 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Item 1");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Item 2");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Item 3");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Item 4");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Item N");
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNuevo = new System.Windows.Forms.TabPage();
             this.buttonGuardar = new System.Windows.Forms.Button();
@@ -64,6 +53,7 @@
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.labelAlerta = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,6 +77,7 @@
             // 
             // tabNuevo
             // 
+            this.tabNuevo.Controls.Add(this.labelAlerta);
             this.tabNuevo.Controls.Add(this.buttonGuardar);
             this.tabNuevo.Controls.Add(this.buttonCancelar);
             this.tabNuevo.Controls.Add(this.panel1);
@@ -283,29 +274,6 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            listViewItem12.StateImageIndex = 0;
-            listViewItem13.StateImageIndex = 0;
-            listViewItem14.StateImageIndex = 0;
-            listViewItem15.StateImageIndex = 0;
-            listViewItem16.StateImageIndex = 0;
-            listViewItem17.StateImageIndex = 0;
-            listViewItem18.StateImageIndex = 0;
-            listViewItem19.StateImageIndex = 0;
-            listViewItem20.StateImageIndex = 0;
-            listViewItem21.StateImageIndex = 0;
-            listViewItem22.StateImageIndex = 0;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22});
             this.listView1.Location = new System.Drawing.Point(6, 6);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -327,7 +295,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 399);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 400);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(534, 22);
             this.statusStrip1.TabIndex = 1;
@@ -338,11 +306,24 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // labelAlerta
+            // 
+            this.labelAlerta.BackColor = System.Drawing.Color.DarkRed;
+            this.labelAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlerta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelAlerta.Location = new System.Drawing.Point(180, 25);
+            this.labelAlerta.Name = "labelAlerta";
+            this.labelAlerta.Size = new System.Drawing.Size(143, 28);
+            this.labelAlerta.TabIndex = 9;
+            this.labelAlerta.Text = "No permitido";
+            this.labelAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAlerta.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 421);
+            this.ClientSize = new System.Drawing.Size(534, 422);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(550, 460);
@@ -386,6 +367,7 @@
         private System.Windows.Forms.DateTimePicker dtpTiempoDescanso;
         private System.Windows.Forms.DateTimePicker dtpHoraSalida;
         private System.Windows.Forms.DateTimePicker dtpHoraEntrada;
+        private System.Windows.Forms.Label labelAlerta;
     }
 }
 
