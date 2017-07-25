@@ -29,25 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Item 1");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Item 2");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Item 3");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Item 4");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Item N");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Item 1");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Item 2");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Item 3");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Item 4");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Item N");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Item N");
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNuevo = new System.Windows.Forms.TabPage();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxHoraSalida = new System.Windows.Forms.TextBox();
-            this.textBoxDescanso = new System.Windows.Forms.TextBox();
-            this.textBoxHoraEntrada = new System.Windows.Forms.TextBox();
+            this.dtpTiempoDescanso = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
+            this.textBoxComentarios = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.labelHoraSalida = new System.Windows.Forms.Label();
             this.labelDescanso = new System.Windows.Forms.Label();
@@ -55,13 +57,13 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.btnNuevoHabilitar = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
-            this.tabEstadisticas = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabEstadisticas = new System.Windows.Forms.TabPage();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +83,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(510, 361);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabNuevo
             // 
@@ -108,6 +111,7 @@
             this.buttonGuardar.TabIndex = 8;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonCancelar
             // 
@@ -128,9 +132,11 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.textBoxHoraSalida);
-            this.panel1.Controls.Add(this.textBoxDescanso);
-            this.panel1.Controls.Add(this.textBoxHoraEntrada);
+            this.panel1.Controls.Add(this.dtpTiempoDescanso);
+            this.panel1.Controls.Add(this.dtpHoraSalida);
+            this.panel1.Controls.Add(this.dtpHoraEntrada);
+            this.panel1.Controls.Add(this.textBoxComentarios);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtpFechaRegistro);
             this.panel1.Controls.Add(this.labelHoraSalida);
             this.panel1.Controls.Add(this.labelDescanso);
@@ -141,52 +147,79 @@
             this.panel1.Size = new System.Drawing.Size(490, 217);
             this.panel1.TabIndex = 1;
             // 
-            // textBoxHoraSalida
+            // dtpTiempoDescanso
             // 
-            this.textBoxHoraSalida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtpTiempoDescanso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxHoraSalida.Enabled = false;
-            this.textBoxHoraSalida.Location = new System.Drawing.Point(211, 150);
-            this.textBoxHoraSalida.Name = "textBoxHoraSalida";
-            this.textBoxHoraSalida.Size = new System.Drawing.Size(227, 20);
-            this.textBoxHoraSalida.TabIndex = 7;
+            this.dtpTiempoDescanso.Enabled = false;
+            this.dtpTiempoDescanso.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTiempoDescanso.Location = new System.Drawing.Point(211, 117);
+            this.dtpTiempoDescanso.Name = "dtpTiempoDescanso";
+            this.dtpTiempoDescanso.Size = new System.Drawing.Size(227, 20);
+            this.dtpTiempoDescanso.TabIndex = 13;
+            this.dtpTiempoDescanso.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
-            // textBoxDescanso
+            // dtpHoraSalida
             // 
-            this.textBoxDescanso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtpHoraSalida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDescanso.Enabled = false;
-            this.textBoxDescanso.Location = new System.Drawing.Point(211, 115);
-            this.textBoxDescanso.Name = "textBoxDescanso";
-            this.textBoxDescanso.Size = new System.Drawing.Size(227, 20);
-            this.textBoxDescanso.TabIndex = 6;
+            this.dtpHoraSalida.Enabled = false;
+            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraSalida.Location = new System.Drawing.Point(211, 91);
+            this.dtpHoraSalida.Name = "dtpHoraSalida";
+            this.dtpHoraSalida.Size = new System.Drawing.Size(227, 20);
+            this.dtpHoraSalida.TabIndex = 12;
+            this.dtpHoraSalida.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
-            // textBoxHoraEntrada
+            // dtpHoraEntrada
             // 
-            this.textBoxHoraEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtpHoraEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxHoraEntrada.Enabled = false;
-            this.textBoxHoraEntrada.Location = new System.Drawing.Point(211, 79);
-            this.textBoxHoraEntrada.Name = "textBoxHoraEntrada";
-            this.textBoxHoraEntrada.Size = new System.Drawing.Size(227, 20);
-            this.textBoxHoraEntrada.TabIndex = 5;
-            this.textBoxHoraEntrada.Tag = "";
+            this.dtpHoraEntrada.Enabled = false;
+            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(211, 65);
+            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(227, 20);
+            this.dtpHoraEntrada.TabIndex = 11;
+            this.dtpHoraEntrada.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
+            // 
+            // textBoxComentarios
+            // 
+            this.textBoxComentarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxComentarios.Enabled = false;
+            this.textBoxComentarios.Location = new System.Drawing.Point(211, 146);
+            this.textBoxComentarios.Multiline = true;
+            this.textBoxComentarios.Name = "textBoxComentarios";
+            this.textBoxComentarios.Size = new System.Drawing.Size(227, 53);
+            this.textBoxComentarios.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Observaciones";
             // 
             // dtpFechaRegistro
             // 
             this.dtpFechaRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaRegistro.CustomFormat = "";
             this.dtpFechaRegistro.Enabled = false;
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(211, 38);
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(211, 27);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
             this.dtpFechaRegistro.Size = new System.Drawing.Size(227, 20);
-            this.dtpFechaRegistro.TabIndex = 4;
+            this.dtpFechaRegistro.TabIndex = 1;
             // 
             // labelHoraSalida
             // 
             this.labelHoraSalida.AutoSize = true;
-            this.labelHoraSalida.Location = new System.Drawing.Point(32, 153);
+            this.labelHoraSalida.Location = new System.Drawing.Point(32, 97);
             this.labelHoraSalida.Name = "labelHoraSalida";
             this.labelHoraSalida.Size = new System.Drawing.Size(86, 13);
             this.labelHoraSalida.TabIndex = 3;
@@ -195,7 +228,7 @@
             // labelDescanso
             // 
             this.labelDescanso.AutoSize = true;
-            this.labelDescanso.Location = new System.Drawing.Point(32, 118);
+            this.labelDescanso.Location = new System.Drawing.Point(32, 123);
             this.labelDescanso.Name = "labelDescanso";
             this.labelDescanso.Size = new System.Drawing.Size(106, 13);
             this.labelDescanso.TabIndex = 2;
@@ -204,7 +237,7 @@
             // labelHoraEntrada
             // 
             this.labelHoraEntrada.AutoSize = true;
-            this.labelHoraEntrada.Location = new System.Drawing.Point(32, 82);
+            this.labelHoraEntrada.Location = new System.Drawing.Point(32, 71);
             this.labelHoraEntrada.Name = "labelHoraEntrada";
             this.labelHoraEntrada.Size = new System.Drawing.Size(95, 13);
             this.labelHoraEntrada.TabIndex = 1;
@@ -213,7 +246,7 @@
             // labelFecha
             // 
             this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(32, 44);
+            this.labelFecha.Location = new System.Drawing.Point(32, 33);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(37, 13);
             this.labelFecha.TabIndex = 0;
@@ -244,6 +277,43 @@
             this.tabListado.Text = "Ver registros";
             this.tabListado.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            listViewItem12.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.StateImageIndex = 0;
+            listViewItem19.StateImageIndex = 0;
+            listViewItem20.StateImageIndex = 0;
+            listViewItem21.StateImageIndex = 0;
+            listViewItem22.StateImageIndex = 0;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22});
+            this.listView1.Location = new System.Drawing.Point(6, 6);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(490, 323);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
             // tabEstadisticas
             // 
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
@@ -267,43 +337,6 @@
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
-            listViewItem10.StateImageIndex = 0;
-            listViewItem11.StateImageIndex = 0;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11});
-            this.listView1.Location = new System.Drawing.Point(6, 6);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(490, 323);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // Form1
             // 
@@ -340,9 +373,6 @@
         private System.Windows.Forms.Label labelHoraEntrada;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.DateTimePicker dtpFechaRegistro;
-        private System.Windows.Forms.TextBox textBoxHoraSalida;
-        private System.Windows.Forms.TextBox textBoxDescanso;
-        private System.Windows.Forms.TextBox textBoxHoraEntrada;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button buttonCancelar;
@@ -351,6 +381,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxComentarios;
+        private System.Windows.Forms.DateTimePicker dtpTiempoDescanso;
+        private System.Windows.Forms.DateTimePicker dtpHoraSalida;
+        private System.Windows.Forms.DateTimePicker dtpHoraEntrada;
     }
 }
 

@@ -8,8 +8,8 @@ namespace appHorarios
     public class Registro
     {
         public DateTime Fecha { get; set; }
-        public DateTime HoraEntrada { get; set; }
-        public DateTime HoraSalida { get; set; }
+        public TimeSpan HoraEntrada { get; set; }
+        public TimeSpan HoraSalida { get; set; }
         public TimeSpan TiempoDescanso { get; set; }
         public String Observaciones { get; set; }
 
@@ -30,6 +30,11 @@ namespace appHorarios
             {
                 return false;
             }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

@@ -11,13 +11,32 @@ namespace appHorarios
 {
     public partial class Form1 : Form
     {
-        private ArchivoRegistro archivoReg;
+        private ArchivoRegistro _archivoReg;
+        private Boolean _nuevoRegEnCurso;
 
         public Form1()
         {
             InitializeComponent();
-            archivoReg = new ArchivoRegistro();
-            archivoReg.AbrirArchivo();
+            _archivoReg = new ArchivoRegistro();
+            _archivoReg.AbrirArchivo();
+            _nuevoRegEnCurso = false;
+        }
+
+        private void ReinicializarVentana()
+        {
+            _nuevoRegEnCurso = false;
+            dtpFechaRegistro.Enabled = false;
+            dtpHoraEntrada.Enabled = false;
+            dtpTiempoDescanso.Enabled = false;
+            dtpHoraSalida.Enabled = false;
+            textBoxComentarios.Enabled = false;
+            buttonCancelar.Enabled = false;
+            buttonGuardar.Enabled = false;
+            dtpFechaRegistro.Value = DateTime.Now;
+            dtpHoraEntrada.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            dtpHoraSalida.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            dtpTiempoDescanso.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            textBoxComentarios.Text = "";
         }
 
         private void btnNuevoHabilitar_MouseEnter(object sender, EventArgs e)
@@ -32,25 +51,45 @@ namespace appHorarios
 
         private void btnNuevoHabilitar_Click(object sender, EventArgs e)
         {
+            _nuevoRegEnCurso = true;
             dtpFechaRegistro.Enabled = true;
-            textBoxHoraEntrada.Enabled = true;
-            textBoxDescanso.Enabled = true;
-            textBoxHoraSalida.Enabled = true;
+            dtpHoraEntrada.Enabled = true;
+            dtpTiempoDescanso.Enabled = true;
+            dtpHoraSalida.Enabled = true;
+            textBoxComentarios.Enabled = true;
             buttonCancelar.Enabled = true;
             buttonGuardar.Enabled = true;
-            //DateTime d = DateTime.Now;
-            //MessageBox.Show(d.ToShortDateString());
-            //MessageBox.Show(d.ToShortTimeString());
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            dtpFechaRegistro.Enabled = false;
-            textBoxHoraEntrada.Enabled = false;
-            textBoxDescanso.Enabled = false;
-            textBoxHoraSalida.Enabled = false;
-            buttonCancelar.Enabled = false;
-            buttonGuardar.Enabled = false;
+            ReinicializarVentana();
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            Registro regInsertar = new Registro();
+            regInsertar.Fecha = DateTime.Parse(dtpFechaRegistro.Text);
+            regInsertar.HoraEntrada = TimeSpan.Parse(dtpHoraEntrada.Text);
+            regInsertar.HoraSalida = TimeSpan.Parse(dtpHoraSalida.Text);
+            regInsertar.TiempoDescanso = TimeSpan.Parse(dtpTiempoDescanso.Text);
+            regInsertar.Observaciones = textBoxComentarios.Text;
+            _archivoReg.ListaRegistros.Add(regInsertar);
+            MessageBox.Show("Registro de horario agregado");
+            ReinicializarVentana();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {     
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
     }
 }

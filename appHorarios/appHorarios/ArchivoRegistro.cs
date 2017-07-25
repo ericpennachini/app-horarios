@@ -12,7 +12,10 @@ namespace appHorarios
         public List<Registro> ListaRegistros { get; set; }
         public FileStream objArchivo { get; set; }
 
-        public ArchivoRegistro() { }
+        public ArchivoRegistro()
+        {
+            ListaRegistros = new List<Registro>();
+        }
 
         public void AbrirArchivo()
         {
@@ -26,8 +29,8 @@ namespace appHorarios
                     ListaRegistros.Add(new Registro
                     {
                         Fecha = DateTime.Parse(campos[0]),
-                        HoraEntrada = DateTime.Parse(campos[1]),
-                        HoraSalida = DateTime.Parse(campos[2]),
+                        HoraEntrada = TimeSpan.Parse(campos[1]),
+                        HoraSalida = TimeSpan.Parse(campos[2]),
                         TiempoDescanso = TimeSpan.Parse(campos[3]),
                         Observaciones = campos[4]
                     });
@@ -45,7 +48,8 @@ namespace appHorarios
         {
             foreach(Registro r in ListaRegistros) 
             {
-                String linea = r.Fecha.ToShortDateString();
+                //String linea = r.Fecha.ToShortDateString()
+                //    + ";" + r.HoraEntrada.toshor
             }
         }
         
