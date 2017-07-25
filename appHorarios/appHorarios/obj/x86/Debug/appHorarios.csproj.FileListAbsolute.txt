@@ -15,3 +15,4 @@ C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorario
 C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.csproj.GenerateResource.Cache
 C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.exe
 C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.pdb
+D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.csprojResolveAssemblyReference.cache

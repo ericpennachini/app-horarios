@@ -11,9 +11,13 @@ namespace appHorarios
 {
     public partial class Form1 : Form
     {
+        private ArchivoRegistro archivoReg;
+
         public Form1()
         {
             InitializeComponent();
+            archivoReg = new ArchivoRegistro();
+            archivoReg.AbrirArchivo();
         }
 
         private void btnNuevoHabilitar_MouseEnter(object sender, EventArgs e)
@@ -34,6 +38,9 @@ namespace appHorarios
             textBoxHoraSalida.Enabled = true;
             buttonCancelar.Enabled = true;
             buttonGuardar.Enabled = true;
+            //DateTime d = DateTime.Now;
+            //MessageBox.Show(d.ToShortDateString());
+            //MessageBox.Show(d.ToShortTimeString());
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
