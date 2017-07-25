@@ -33,6 +33,7 @@ namespace appHorarios
             textBoxDescanso.Enabled = true;
             textBoxHoraSalida.Enabled = true;
             buttonCancelar.Enabled = true;
+            buttonGuardar.Enabled = true;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace appHorarios
             textBoxDescanso.Enabled = false;
             textBoxHoraSalida.Enabled = false;
             buttonCancelar.Enabled = false;
+            buttonGuardar.Enabled = false;
         }
     }
 }

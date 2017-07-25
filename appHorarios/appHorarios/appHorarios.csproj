@@ -79,6 +79,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\icons8_Add_32px.png" />
+    <Content Include="img\icons8_Checked_32px.png" />
+    <Content Include="img\icons8_Multiply_32px.png" />
+    <Content Include="img\icons8_Ok_48px.png" />
+    <Content Include="img\icons8_Plus_Math_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
