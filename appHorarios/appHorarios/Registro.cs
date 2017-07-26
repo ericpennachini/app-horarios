@@ -22,7 +22,7 @@ namespace appHorarios
         public override bool Equals(object obj)
         {
             Registro r = (Registro)obj;
-            if (this.Fecha == r.Fecha)
+            if (Fecha == r.Fecha)
             {
                 return true;
             }

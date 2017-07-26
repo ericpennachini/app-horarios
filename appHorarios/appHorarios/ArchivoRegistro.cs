@@ -25,7 +25,7 @@ namespace appHorarios
                 lineas = File.ReadAllLines("archivoReg.txt");
                 for (int i = 0; i < lineas.Length; i++)
                 {
-                    string[] campos = lineas[i].Split(new char[';'], StringSplitOptions.None);
+                    string[] campos = lineas[i].Split(new char[] { ';' });
                     ListaRegistros.Add(new Registro
                     {
                         Fecha = DateTime.Parse(campos[0]),
@@ -39,17 +39,25 @@ namespace appHorarios
             catch (FileNotFoundException fnfEx)
             {
                 MessageBox.Show(fnfEx.Message + "\n\n"
-                    + "Se iniciará el listado vacío. Si el archivo se encuentra en otro lugar, ubiquelo donde está la aplicación y vuelva a iniciarla",
+                    + "Se creará el archivo vacío. Si éste se encuentra en otro lugar, ubiquelo donde está la aplicación y vuelva a iniciarla",
                     "Error de archivo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                File.Create("archivoReg.txt");
             }
         }
 
         public void EscribirArchivo()
         {
-            foreach(Registro r in ListaRegistros) 
+            using (StreamWriter archivo = new StreamWriter("archivoReg.txt"))
             {
-                //String linea = r.Fecha.ToShortDateString()
-                //    + ";" + r.HoraEntrada.toshor
+                foreach (Registro r in ListaRegistros)
+                {
+                    String linea = r.Fecha.ToShortDateString()
+                        + ";" + r.HoraEntrada.ToString()
+                        + ";" + r.HoraSalida.ToString()
+                        + ";" + r.TiempoDescanso.ToString()
+                        + ";" + r.Observaciones;
+                    archivo.WriteLine(linea);
+                }
             }
         }
         

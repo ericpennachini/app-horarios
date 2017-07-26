@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNuevo = new System.Windows.Forms.TabPage();
+            this.labelAlerta = new System.Windows.Forms.Label();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,19 +47,38 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.btnNuevoHabilitar = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbObservacionesDetalle = new System.Windows.Forms.TextBox();
+            this.tbTiempoDescDetalle = new System.Windows.Forms.TextBox();
+            this.tbHoraSalidaDetalle = new System.Windows.Forms.TextBox();
+            this.tbHoraEntradaDetalle = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.labelAlerta = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelAvgDescanso = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelAvgHoras2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelAvgHoras1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabListado.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabEstadisticas.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,6 +109,19 @@
             this.tabNuevo.TabIndex = 0;
             this.tabNuevo.Text = "Nuevo registro";
             this.tabNuevo.UseVisualStyleBackColor = true;
+            // 
+            // labelAlerta
+            // 
+            this.labelAlerta.BackColor = System.Drawing.Color.DarkRed;
+            this.labelAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlerta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelAlerta.Location = new System.Drawing.Point(180, 25);
+            this.labelAlerta.Name = "labelAlerta";
+            this.labelAlerta.Size = new System.Drawing.Size(143, 28);
+            this.labelAlerta.TabIndex = 9;
+            this.labelAlerta.Text = "No permitido";
+            this.labelAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAlerta.Visible = false;
             // 
             // buttonGuardar
             // 
@@ -259,6 +292,8 @@
             // 
             // tabListado
             // 
+            this.tabListado.BackColor = System.Drawing.Color.Transparent;
+            this.tabListado.Controls.Add(this.groupBox1);
             this.tabListado.Controls.Add(this.listView1);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
@@ -266,24 +301,110 @@
             this.tabListado.Size = new System.Drawing.Size(502, 335);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Ver registros";
-            this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tbObservacionesDetalle);
+            this.groupBox1.Controls.Add(this.tbTiempoDescDetalle);
+            this.groupBox1.Controls.Add(this.tbHoraSalidaDetalle);
+            this.groupBox1.Controls.Add(this.tbHoraEntradaDetalle);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(248, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(248, 322);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Detalle";
+            // 
+            // tbObservacionesDetalle
+            // 
+            this.tbObservacionesDetalle.Location = new System.Drawing.Point(9, 225);
+            this.tbObservacionesDetalle.Multiline = true;
+            this.tbObservacionesDetalle.Name = "tbObservacionesDetalle";
+            this.tbObservacionesDetalle.ReadOnly = true;
+            this.tbObservacionesDetalle.Size = new System.Drawing.Size(233, 91);
+            this.tbObservacionesDetalle.TabIndex = 17;
+            // 
+            // tbTiempoDescDetalle
+            // 
+            this.tbTiempoDescDetalle.Location = new System.Drawing.Point(9, 163);
+            this.tbTiempoDescDetalle.Name = "tbTiempoDescDetalle";
+            this.tbTiempoDescDetalle.ReadOnly = true;
+            this.tbTiempoDescDetalle.Size = new System.Drawing.Size(233, 20);
+            this.tbTiempoDescDetalle.TabIndex = 16;
+            // 
+            // tbHoraSalidaDetalle
+            // 
+            this.tbHoraSalidaDetalle.Location = new System.Drawing.Point(9, 99);
+            this.tbHoraSalidaDetalle.Name = "tbHoraSalidaDetalle";
+            this.tbHoraSalidaDetalle.ReadOnly = true;
+            this.tbHoraSalidaDetalle.Size = new System.Drawing.Size(233, 20);
+            this.tbHoraSalidaDetalle.TabIndex = 15;
+            // 
+            // tbHoraEntradaDetalle
+            // 
+            this.tbHoraEntradaDetalle.Location = new System.Drawing.Point(9, 44);
+            this.tbHoraEntradaDetalle.Name = "tbHoraEntradaDetalle";
+            this.tbHoraEntradaDetalle.ReadOnly = true;
+            this.tbHoraEntradaDetalle.Size = new System.Drawing.Size(233, 20);
+            this.tbHoraEntradaDetalle.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 209);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Observaciones";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Tiempo de descanso";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Hora de salida";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Hora de entrada";
             // 
             // listView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
             this.listView1.Location = new System.Drawing.Point(6, 6);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(490, 323);
+            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listView1.Size = new System.Drawing.Size(235, 323);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // tabEstadisticas
             // 
+            this.tabEstadisticas.Controls.Add(this.button2);
+            this.tabEstadisticas.Controls.Add(this.groupBox2);
+            this.tabEstadisticas.Controls.Add(this.button1);
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.tabEstadisticas.Name = "tabEstadisticas";
             this.tabEstadisticas.Size = new System.Drawing.Size(502, 335);
@@ -306,18 +427,121 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
-            // labelAlerta
+            // button1
             // 
-            this.labelAlerta.BackColor = System.Drawing.Color.DarkRed;
-            this.labelAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAlerta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelAlerta.Location = new System.Drawing.Point(180, 25);
-            this.labelAlerta.Name = "labelAlerta";
-            this.labelAlerta.Size = new System.Drawing.Size(143, 28);
-            this.labelAlerta.TabIndex = 9;
-            this.labelAlerta.Text = "No permitido";
-            this.labelAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelAlerta.Visible = false;
+            this.button1.Location = new System.Drawing.Point(402, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.labelAvgDescanso);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.labelAvgHoras2);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.labelAvgHoras1);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(3, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(375, 324);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Información";
+            // 
+            // labelAvgDescanso
+            // 
+            this.labelAvgDescanso.AutoSize = true;
+            this.labelAvgDescanso.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgDescanso.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgDescanso.Location = new System.Drawing.Point(4, 202);
+            this.labelAvgDescanso.Name = "labelAvgDescanso";
+            this.labelAvgDescanso.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgDescanso.TabIndex = 12;
+            this.labelAvgDescanso.Text = "--:--:--";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 179);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Tiempo de descanso promedio";
+            // 
+            // labelAvgHoras2
+            // 
+            this.labelAvgHoras2.AutoSize = true;
+            this.labelAvgHoras2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgHoras2.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgHoras2.Location = new System.Drawing.Point(4, 129);
+            this.labelAvgHoras2.Name = "labelAvgHoras2";
+            this.labelAvgHoras2.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgHoras2.TabIndex = 10;
+            this.labelAvgHoras2.Text = "--:--:--";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 106);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(228, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Promedio de horas trabajadas (con descansos)";
+            // 
+            // labelAvgHoras1
+            // 
+            this.labelAvgHoras1.AutoSize = true;
+            this.labelAvgHoras1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgHoras1.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgHoras1.Location = new System.Drawing.Point(6, 53);
+            this.labelAvgHoras1.Name = "labelAvgHoras1";
+            this.labelAvgHoras1.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgHoras1.TabIndex = 8;
+            this.labelAvgHoras1.Text = "--:--:--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Promedio de horas trabajadas";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(402, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Reiniciar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.Location = new System.Drawing.Point(6, 274);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 25);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "--:--:--";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 251);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(141, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Horario de entrada promedio";
             // 
             // Form1
             // 
@@ -329,13 +553,19 @@
             this.MinimumSize = new System.Drawing.Size(550, 460);
             this.Name = "Form1";
             this.Text = "Control de horarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabNuevo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabListado.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabEstadisticas.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,15 +589,32 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxComentarios;
         private System.Windows.Forms.DateTimePicker dtpTiempoDescanso;
         private System.Windows.Forms.DateTimePicker dtpHoraSalida;
         private System.Windows.Forms.DateTimePicker dtpHoraEntrada;
         private System.Windows.Forms.Label labelAlerta;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox tbObservacionesDetalle;
+        private System.Windows.Forms.TextBox tbTiempoDescDetalle;
+        private System.Windows.Forms.TextBox tbHoraSalidaDetalle;
+        private System.Windows.Forms.TextBox tbHoraEntradaDetalle;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label labelAvgDescanso;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelAvgHoras2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelAvgHoras1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 

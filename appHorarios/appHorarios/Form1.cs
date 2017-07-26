@@ -22,6 +22,7 @@ namespace appHorarios
             _archivoReg.AbrirArchivo();
             _nuevoRegEnCurso = false;
             _timerAlerta = new Timer() { Interval = 1500 };
+            listView1.View = View.List;
         }
 
         private void ReinicializarVentana()
@@ -76,9 +77,17 @@ namespace appHorarios
             regInsertar.HoraSalida = TimeSpan.Parse(dtpHoraSalida.Text);
             regInsertar.TiempoDescanso = TimeSpan.Parse(dtpTiempoDescanso.Text);
             regInsertar.Observaciones = textBoxComentarios.Text;
-            _archivoReg.ListaRegistros.Add(regInsertar);
-            MessageBox.Show("Registro de horario agregado");
-            ReinicializarVentana();
+            if (!_archivoReg.ListaRegistros.Contains(regInsertar))
+            {
+                _archivoReg.ListaRegistros.Add(regInsertar);
+                MessageBox.Show("Registro de horario agregado");
+                ReinicializarVentana();
+            }
+            else
+            {
+                MessageBox.Show("Registro ya existe. Verifique la fecha.", "Validación",       
+                    MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+            }
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,6 +104,15 @@ namespace appHorarios
                         _timerAlerta.Start();
                         tabControl1.SelectedIndex = 0;
                     }
+                    else
+                    {
+                        listView1.Items.Clear();
+                        foreach (Registro r in _archivoReg.ListaRegistros)
+                        {
+                            listView1.Items.Add(r.Fecha.ToShortDateString());
+                        }
+                        listView1.Sort();
+                    }
                     break;
                 case 2:
                     break;
@@ -105,6 +123,33 @@ namespace appHorarios
         {
             labelAlerta.Visible = false;
             _timerAlerta.Stop();
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            var selected = listView1.SelectedItems[0];
+            DateTime f = DateTime.Parse(selected.Text);
+            var obtenido = from r in _archivoReg.ListaRegistros
+                           where r.Fecha == f
+                           select r;
+            Registro mostrar = obtenido.ElementAt(0);
+            tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
+            tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
+            tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
+            tbObservacionesDetalle.Text = mostrar.Observaciones;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _archivoReg.EscribirArchivo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadas);
+            labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString();
+            TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadasConDescanso);
+            labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString();
         }
     }
 }
