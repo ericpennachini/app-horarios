@@ -111,7 +111,6 @@ namespace appHorarios
                         {
                             listView1.Items.Add(r.Fecha.ToShortDateString());
                         }
-                        listView1.Sort();
                     }
                     break;
                 case 2:
@@ -127,16 +126,18 @@ namespace appHorarios
 
         private void listView1_Click(object sender, EventArgs e)
         {
-            var selected = listView1.SelectedItems[0];
-            DateTime f = DateTime.Parse(selected.Text);
-            var obtenido = from r in _archivoReg.ListaRegistros
-                           where r.Fecha == f
-                           select r;
-            Registro mostrar = obtenido.ElementAt(0);
-            tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
-            tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
-            tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
-            tbObservacionesDetalle.Text = mostrar.Observaciones;
+            //var selected = listView1.SelectedItems[0];
+            //DateTime f = DateTime.Parse(selected.Text);
+            //var obtenido = from r in _archivoReg.ListaRegistros
+            //               where r.Fecha == f
+            //               select r;
+            //Registro mostrar = obtenido.ElementAt(0);
+            //tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
+            //tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
+            //tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
+            //tbHorasTrabajadasDetalle.Text = ((mostrar.HoraSalida - mostrar.HoraEntrada) - mostrar.TiempoDescanso).ToString();
+            //tbHorasTrabajadasDescDetalle.Text = (mostrar.HoraSalida - mostrar.HoraEntrada).ToString();
+            //tbObservacionesDetalle.Text = mostrar.Observaciones;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -146,10 +147,45 @@ namespace appHorarios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadas);
-            labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString();
-            TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadasConDescanso);
-            labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString();
+            if (_archivoReg.ListaRegistros.Count > 0)
+            {
+                TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadas);
+                labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString();
+                TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadasConDescanso);
+                labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString();
+                TimeSpan mostrarTiempoDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.TiempoDeDescanso);
+                labelAvgDescanso.Text = mostrarTiempoDescAvg.ToString();
+                TimeSpan mostrarHoraEntradaAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorarioDeEntrada);
+                labelAvgHoraEntrada.Text = mostrarHoraEntradaAvg.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No hay registros para calcular aún.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                var selected = listView1.SelectedItems[0];
+                DateTime f = DateTime.Parse(selected.Text);
+                var obtenido = from r in _archivoReg.ListaRegistros
+                               where r.Fecha == f
+                               select r;
+                Registro mostrar = obtenido.ElementAt(0);
+                tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
+                tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
+                tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
+                tbHorasTrabajadasDetalle.Text = ((mostrar.HoraSalida - mostrar.HoraEntrada) - mostrar.TiempoDescanso).ToString();
+                tbHorasTrabajadasDescDetalle.Text = (mostrar.HoraSalida - mostrar.HoraEntrada).ToString();
+                tbObservacionesDetalle.Text = mostrar.Observaciones;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _archivoReg.EscribirArchivo();
         }
     }
 }

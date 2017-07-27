@@ -22,13 +22,43 @@ namespace appHorarios
                     acumulador.Clear();
                     foreach (Registro r in regs)
                     {
-                        acumulador.Add(r.HoraEntrada);
+                        acumulador.Add((r.HoraSalida - r.HoraEntrada) - r.TiempoDescanso);
                     }
                     prom = acumulador.Average(ts => ts.Ticks);
                     promL = Convert.ToInt64(prom);
                     resultado = new TimeSpan(promL);
                     break;
                 case 1:
+                    acumulador.Clear();
+                    foreach (Registro r in regs)
+                    {
+                        acumulador.Add(r.HoraSalida - r.HoraEntrada);
+                    }
+                    prom = acumulador.Average(ts => ts.Ticks);
+                    promL = Convert.ToInt64(prom);
+                    resultado = new TimeSpan(promL);
+                    break;
+                case 2:
+                    acumulador.Clear();
+                    foreach (Registro r in regs)
+                    {
+                        acumulador.Add(r.TiempoDescanso);
+                    }
+                    prom = acumulador.Average(ts => ts.Ticks);
+                    promL = Convert.ToInt64(prom);
+                    resultado = new TimeSpan(promL);
+                    break;
+                case 3:
+                    acumulador.Clear();
+                    foreach (Registro r in regs)
+                    {
+                        acumulador.Add(r.HoraEntrada);
+                    }
+                    prom = acumulador.Average(ts => ts.Ticks);
+                    promL = Convert.ToInt64(prom);
+                    resultado = new TimeSpan(promL);
+                    break;
+                case 4:
                     acumulador.Clear();
                     foreach (Registro r in regs)
                     {

@@ -88,6 +88,7 @@
     <Content Include="img\icons8_Multiply_32px.png" />
     <Content Include="img\icons8_Ok_48px.png" />
     <Content Include="img\icons8_Plus_Math_32px.png" />
+    <Content Include="img\icons8_Save.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

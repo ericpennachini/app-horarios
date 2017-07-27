@@ -58,27 +58,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelAvgHoraEntrada = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.labelAvgDescanso = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labelAvgHoras2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelAvgHoras1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbHorasTrabajadasDetalle = new System.Windows.Forms.TextBox();
+            this.tbHorasTrabajadasDescDetalle = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabListado.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabEstadisticas.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -132,7 +137,7 @@
             this.buttonGuardar.Location = new System.Drawing.Point(250, 282);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(120, 47);
-            this.buttonGuardar.TabIndex = 8;
+            this.buttonGuardar.TabIndex = 6;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
@@ -146,7 +151,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(376, 282);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(120, 47);
-            this.buttonCancelar.TabIndex = 2;
+            this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -180,7 +185,7 @@
             this.dtpTiempoDescanso.Location = new System.Drawing.Point(211, 117);
             this.dtpTiempoDescanso.Name = "dtpTiempoDescanso";
             this.dtpTiempoDescanso.Size = new System.Drawing.Size(227, 20);
-            this.dtpTiempoDescanso.TabIndex = 13;
+            this.dtpTiempoDescanso.TabIndex = 4;
             this.dtpTiempoDescanso.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
             // dtpHoraSalida
@@ -192,7 +197,7 @@
             this.dtpHoraSalida.Location = new System.Drawing.Point(211, 91);
             this.dtpHoraSalida.Name = "dtpHoraSalida";
             this.dtpHoraSalida.Size = new System.Drawing.Size(227, 20);
-            this.dtpHoraSalida.TabIndex = 12;
+            this.dtpHoraSalida.TabIndex = 3;
             this.dtpHoraSalida.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
             // dtpHoraEntrada
@@ -204,7 +209,7 @@
             this.dtpHoraEntrada.Location = new System.Drawing.Point(211, 65);
             this.dtpHoraEntrada.Name = "dtpHoraEntrada";
             this.dtpHoraEntrada.Size = new System.Drawing.Size(227, 20);
-            this.dtpHoraEntrada.TabIndex = 11;
+            this.dtpHoraEntrada.TabIndex = 2;
             this.dtpHoraEntrada.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
             // textBoxComentarios
@@ -217,7 +222,7 @@
             this.textBoxComentarios.Multiline = true;
             this.textBoxComentarios.Name = "textBoxComentarios";
             this.textBoxComentarios.Size = new System.Drawing.Size(227, 53);
-            this.textBoxComentarios.TabIndex = 10;
+            this.textBoxComentarios.TabIndex = 5;
             // 
             // label1
             // 
@@ -304,6 +309,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbHorasTrabajadasDescDetalle);
+            this.groupBox1.Controls.Add(this.tbHorasTrabajadasDetalle);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tbObservacionesDetalle);
             this.groupBox1.Controls.Add(this.tbTiempoDescDetalle);
             this.groupBox1.Controls.Add(this.tbHoraSalidaDetalle);
@@ -321,16 +330,16 @@
             // 
             // tbObservacionesDetalle
             // 
-            this.tbObservacionesDetalle.Location = new System.Drawing.Point(9, 225);
+            this.tbObservacionesDetalle.Location = new System.Drawing.Point(9, 238);
             this.tbObservacionesDetalle.Multiline = true;
             this.tbObservacionesDetalle.Name = "tbObservacionesDetalle";
             this.tbObservacionesDetalle.ReadOnly = true;
-            this.tbObservacionesDetalle.Size = new System.Drawing.Size(233, 91);
+            this.tbObservacionesDetalle.Size = new System.Drawing.Size(233, 78);
             this.tbObservacionesDetalle.TabIndex = 17;
             // 
             // tbTiempoDescDetalle
             // 
-            this.tbTiempoDescDetalle.Location = new System.Drawing.Point(9, 163);
+            this.tbTiempoDescDetalle.Location = new System.Drawing.Point(9, 131);
             this.tbTiempoDescDetalle.Name = "tbTiempoDescDetalle";
             this.tbTiempoDescDetalle.ReadOnly = true;
             this.tbTiempoDescDetalle.Size = new System.Drawing.Size(233, 20);
@@ -338,7 +347,7 @@
             // 
             // tbHoraSalidaDetalle
             // 
-            this.tbHoraSalidaDetalle.Location = new System.Drawing.Point(9, 99);
+            this.tbHoraSalidaDetalle.Location = new System.Drawing.Point(9, 84);
             this.tbHoraSalidaDetalle.Name = "tbHoraSalidaDetalle";
             this.tbHoraSalidaDetalle.ReadOnly = true;
             this.tbHoraSalidaDetalle.Size = new System.Drawing.Size(233, 20);
@@ -346,7 +355,7 @@
             // 
             // tbHoraEntradaDetalle
             // 
-            this.tbHoraEntradaDetalle.Location = new System.Drawing.Point(9, 44);
+            this.tbHoraEntradaDetalle.Location = new System.Drawing.Point(9, 39);
             this.tbHoraEntradaDetalle.Name = "tbHoraEntradaDetalle";
             this.tbHoraEntradaDetalle.ReadOnly = true;
             this.tbHoraEntradaDetalle.Size = new System.Drawing.Size(233, 20);
@@ -355,7 +364,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 209);
+            this.label5.Location = new System.Drawing.Point(6, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 13;
@@ -364,7 +373,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 143);
+            this.label4.Location = new System.Drawing.Point(6, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 12;
@@ -373,7 +382,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 83);
+            this.label3.Location = new System.Drawing.Point(6, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 11;
@@ -382,7 +391,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 28);
+            this.label2.Location = new System.Drawing.Point(6, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 10;
@@ -398,6 +407,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // tabEstadisticas
@@ -412,34 +422,18 @@
             this.tabEstadisticas.Text = "Estadísticas";
             this.tabEstadisticas.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
+            // button2
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 400);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(534, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(402, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(402, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Reiniciar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.labelAvgHoraEntrada);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.labelAvgDescanso);
             this.groupBox2.Controls.Add(this.label11);
@@ -453,6 +447,26 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información";
+            // 
+            // labelAvgHoraEntrada
+            // 
+            this.labelAvgHoraEntrada.AutoSize = true;
+            this.labelAvgHoraEntrada.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgHoraEntrada.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgHoraEntrada.Location = new System.Drawing.Point(6, 274);
+            this.labelAvgHoraEntrada.Name = "labelAvgHoraEntrada";
+            this.labelAvgHoraEntrada.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgHoraEntrada.TabIndex = 14;
+            this.labelAvgHoraEntrada.Text = "--:--:--";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 251);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(141, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Horario de entrada promedio";
             // 
             // labelAvgDescanso
             // 
@@ -490,9 +504,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 106);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(228, 13);
+            this.label9.Size = new System.Drawing.Size(268, 13);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Promedio de horas trabajadas (con descansos)";
+            this.label9.Text = "Promedio de horas trabajadas (con descansos, por día)";
             // 
             // labelAvgHoras1
             // 
@@ -510,48 +524,90 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 13);
+            this.label6.Size = new System.Drawing.Size(190, 13);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Promedio de horas trabajadas";
+            this.label6.Text = "Promedio de horas trabajadas (por día)";
             // 
-            // button2
+            // button1
             // 
-            this.button2.Location = new System.Drawing.Point(402, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Reiniciar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(402, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 400);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(534, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(6, 274);
+            this.label7.Location = new System.Drawing.Point(6, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "--:--:--";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Hs. trabajadas";
             // 
-            // label8
+            // label10
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 251);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Horario de entrada promedio";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(138, 163);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Hs. trabajadas (desc.)";
+            // 
+            // tbHorasTrabajadasDetalle
+            // 
+            this.tbHorasTrabajadasDetalle.Location = new System.Drawing.Point(9, 180);
+            this.tbHorasTrabajadasDetalle.Name = "tbHorasTrabajadasDetalle";
+            this.tbHorasTrabajadasDetalle.ReadOnly = true;
+            this.tbHorasTrabajadasDetalle.Size = new System.Drawing.Size(103, 20);
+            this.tbHorasTrabajadasDetalle.TabIndex = 20;
+            // 
+            // tbHorasTrabajadasDescDetalle
+            // 
+            this.tbHorasTrabajadasDescDetalle.Location = new System.Drawing.Point(139, 180);
+            this.tbHorasTrabajadasDescDetalle.Name = "tbHorasTrabajadasDescDetalle";
+            this.tbHorasTrabajadasDescDetalle.ReadOnly = true;
+            this.tbHorasTrabajadasDescDetalle.Size = new System.Drawing.Size(103, 20);
+            this.tbHorasTrabajadasDescDetalle.TabIndex = 21;
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(490, 371);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 422);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(550, 460);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de horarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
@@ -562,10 +618,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabEstadisticas.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,8 +669,13 @@
         private System.Windows.Forms.Label labelAvgHoras1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelAvgHoraEntrada;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbHorasTrabajadasDescDetalle;
+        private System.Windows.Forms.TextBox tbHorasTrabajadasDetalle;
+        private System.Windows.Forms.Button button3;
     }
 }
 

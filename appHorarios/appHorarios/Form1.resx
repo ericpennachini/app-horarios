@@ -164,4 +164,13 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVDhPYxg8wGTG7f+aDTvBeMO+o3C8cN3W/00TpoHZ
+        cUuu/DeefvuA3qIL3FBtCIDLAJBmNSMLuAEgdSBDoNoQgBQDQBiqDQFAglpNe8EGLNx+BG4AzAvr9x37
+        H7DgGn4DSMFQbQiATRE+DNWGACDBH7///ScEQGpwGgACr969/3//6QusGCQHArQ14Mu37//ff/qMFYPk
+        QIB2BmRsevI/a/NTvDgdqAarAQMEGBgA/JfA8CimBDIAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
