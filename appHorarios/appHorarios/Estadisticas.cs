@@ -16,13 +16,24 @@ namespace appHorarios
             List<TimeSpan> acumulador = new List<TimeSpan>();
             double prom;
             long promL;
+            //List<Registro> regs2 = new List<Registro>(regs);
+            //foreach (Registro reg in regs2)
+            //{
+            //    if (reg.DescansoValido == false)
+            //    {
+            //        regs.Remove(reg);
+            //    }
+            //}
             switch (t)
             {
                 case 0:
                     acumulador.Clear();
                     foreach (Registro r in regs)
                     {
-                        acumulador.Add((r.HoraSalida - r.HoraEntrada) - r.TiempoDescanso);
+                        if (r.DescansoValido == true)
+                        {
+                            acumulador.Add((r.HoraSalida - r.HoraEntrada) - r.TiempoDescanso);
+                        }
                     }
                     prom = acumulador.Average(ts => ts.Ticks);
                     promL = Convert.ToInt64(prom);
@@ -42,7 +53,10 @@ namespace appHorarios
                     acumulador.Clear();
                     foreach (Registro r in regs)
                     {
-                        acumulador.Add(r.TiempoDescanso);
+                        if (r.DescansoValido == true)
+                        {
+                            acumulador.Add(r.TiempoDescanso);
+                        }
                     }
                     prom = acumulador.Average(ts => ts.Ticks);
                     promL = Convert.ToInt64(prom);

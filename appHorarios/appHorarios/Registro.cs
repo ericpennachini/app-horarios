@@ -11,12 +11,14 @@ namespace appHorarios
         public TimeSpan HoraEntrada { get; set; }
         public TimeSpan HoraSalida { get; set; }
         public TimeSpan TiempoDescanso { get; set; }
+        public Boolean DescansoValido { get; set; }
         public String Observaciones { get; set; }
 
         public Registro()
         {
             Fecha = DateTime.Now;
             TiempoDescanso = new TimeSpan(1, 0, 0);
+            DescansoValido = true;
         }
 
         public override bool Equals(object obj)

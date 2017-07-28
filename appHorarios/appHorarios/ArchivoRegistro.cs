@@ -32,7 +32,8 @@ namespace appHorarios
                         HoraEntrada = TimeSpan.Parse(campos[1]),
                         HoraSalida = TimeSpan.Parse(campos[2]),
                         TiempoDescanso = TimeSpan.Parse(campos[3]),
-                        Observaciones = campos[4]
+                        DescansoValido = Boolean.Parse(campos[4]),
+                        Observaciones = campos[5]
                     });
                 }
             }
@@ -55,6 +56,7 @@ namespace appHorarios
                         + ";" + r.HoraEntrada.ToString()
                         + ";" + r.HoraSalida.ToString()
                         + ";" + r.TiempoDescanso.ToString()
+                        + ";" + r.DescansoValido.ToString()
                         + ";" + r.Observaciones;
                     archivo.WriteLine(linea);
                 }

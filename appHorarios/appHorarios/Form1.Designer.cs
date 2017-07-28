@@ -48,6 +48,10 @@
             this.btnNuevoHabilitar = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbHorasTrabajadasDescDetalle = new System.Windows.Forms.TextBox();
+            this.tbHorasTrabajadasDetalle = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tbObservacionesDetalle = new System.Windows.Forms.TextBox();
             this.tbTiempoDescDetalle = new System.Windows.Forms.TextBox();
             this.tbHoraSalidaDetalle = new System.Windows.Forms.TextBox();
@@ -71,11 +75,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tbHorasTrabajadasDetalle = new System.Windows.Forms.TextBox();
-            this.tbHorasTrabajadasDescDetalle = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.labelAvgHoraSalida = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -161,6 +164,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.dtpTiempoDescanso);
             this.panel1.Controls.Add(this.dtpHoraSalida);
             this.panel1.Controls.Add(this.dtpHoraEntrada);
@@ -182,9 +186,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpTiempoDescanso.Enabled = false;
             this.dtpTiempoDescanso.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTiempoDescanso.Location = new System.Drawing.Point(211, 117);
+            this.dtpTiempoDescanso.Location = new System.Drawing.Point(194, 117);
             this.dtpTiempoDescanso.Name = "dtpTiempoDescanso";
-            this.dtpTiempoDescanso.Size = new System.Drawing.Size(227, 20);
+            this.dtpTiempoDescanso.Size = new System.Drawing.Size(170, 20);
             this.dtpTiempoDescanso.TabIndex = 4;
             this.dtpTiempoDescanso.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -194,9 +198,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpHoraSalida.Enabled = false;
             this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraSalida.Location = new System.Drawing.Point(211, 91);
+            this.dtpHoraSalida.Location = new System.Drawing.Point(194, 91);
             this.dtpHoraSalida.Name = "dtpHoraSalida";
-            this.dtpHoraSalida.Size = new System.Drawing.Size(227, 20);
+            this.dtpHoraSalida.Size = new System.Drawing.Size(247, 20);
             this.dtpHoraSalida.TabIndex = 3;
             this.dtpHoraSalida.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -206,9 +210,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpHoraEntrada.Enabled = false;
             this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraEntrada.Location = new System.Drawing.Point(211, 65);
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(194, 65);
             this.dtpHoraEntrada.Name = "dtpHoraEntrada";
-            this.dtpHoraEntrada.Size = new System.Drawing.Size(227, 20);
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(247, 20);
             this.dtpHoraEntrada.TabIndex = 2;
             this.dtpHoraEntrada.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -218,10 +222,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxComentarios.Enabled = false;
-            this.textBoxComentarios.Location = new System.Drawing.Point(211, 146);
+            this.textBoxComentarios.Location = new System.Drawing.Point(194, 146);
             this.textBoxComentarios.Multiline = true;
             this.textBoxComentarios.Name = "textBoxComentarios";
-            this.textBoxComentarios.Size = new System.Drawing.Size(227, 53);
+            this.textBoxComentarios.Size = new System.Drawing.Size(247, 53);
             this.textBoxComentarios.TabIndex = 5;
             // 
             // label1
@@ -240,9 +244,9 @@
             this.dtpFechaRegistro.CustomFormat = "";
             this.dtpFechaRegistro.Enabled = false;
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(211, 27);
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(194, 27);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(227, 20);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(247, 20);
             this.dtpFechaRegistro.TabIndex = 1;
             // 
             // labelHoraSalida
@@ -309,6 +313,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.tbHorasTrabajadasDescDetalle);
             this.groupBox1.Controls.Add(this.tbHorasTrabajadasDetalle);
             this.groupBox1.Controls.Add(this.label10);
@@ -328,13 +333,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
             // 
+            // tbHorasTrabajadasDescDetalle
+            // 
+            this.tbHorasTrabajadasDescDetalle.Location = new System.Drawing.Point(139, 180);
+            this.tbHorasTrabajadasDescDetalle.Name = "tbHorasTrabajadasDescDetalle";
+            this.tbHorasTrabajadasDescDetalle.ReadOnly = true;
+            this.tbHorasTrabajadasDescDetalle.Size = new System.Drawing.Size(103, 20);
+            this.tbHorasTrabajadasDescDetalle.TabIndex = 21;
+            // 
+            // tbHorasTrabajadasDetalle
+            // 
+            this.tbHorasTrabajadasDetalle.Location = new System.Drawing.Point(9, 180);
+            this.tbHorasTrabajadasDetalle.Name = "tbHorasTrabajadasDetalle";
+            this.tbHorasTrabajadasDetalle.ReadOnly = true;
+            this.tbHorasTrabajadasDetalle.Size = new System.Drawing.Size(103, 20);
+            this.tbHorasTrabajadasDetalle.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(138, 163);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Hs. trabajadas (desc.)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 163);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Hs. trabajadas";
+            // 
             // tbObservacionesDetalle
             // 
-            this.tbObservacionesDetalle.Location = new System.Drawing.Point(9, 238);
+            this.tbObservacionesDetalle.Location = new System.Drawing.Point(9, 227);
             this.tbObservacionesDetalle.Multiline = true;
             this.tbObservacionesDetalle.Name = "tbObservacionesDetalle";
             this.tbObservacionesDetalle.ReadOnly = true;
-            this.tbObservacionesDetalle.Size = new System.Drawing.Size(233, 78);
+            this.tbObservacionesDetalle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbObservacionesDetalle.Size = new System.Drawing.Size(233, 46);
             this.tbObservacionesDetalle.TabIndex = 17;
             // 
             // tbTiempoDescDetalle
@@ -364,7 +404,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 222);
+            this.label5.Location = new System.Drawing.Point(6, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 13;
@@ -408,7 +448,6 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
-            this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // tabEstadisticas
             // 
@@ -433,6 +472,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelAvgHoraSalida);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.labelAvgHoraEntrada);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.labelAvgDescanso);
@@ -458,6 +499,7 @@
             this.labelAvgHoraEntrada.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoraEntrada.TabIndex = 14;
             this.labelAvgHoraEntrada.Text = "--:--:--";
+            this.labelAvgHoraEntrada.TextChanged += new System.EventHandler(this.labelAvgHoraEntrada_TextChanged);
             // 
             // label8
             // 
@@ -478,6 +520,7 @@
             this.labelAvgDescanso.Size = new System.Drawing.Size(70, 25);
             this.labelAvgDescanso.TabIndex = 12;
             this.labelAvgDescanso.Text = "--:--:--";
+            this.labelAvgDescanso.TextChanged += new System.EventHandler(this.labelAvgDescanso_TextChanged);
             // 
             // label11
             // 
@@ -498,6 +541,7 @@
             this.labelAvgHoras2.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoras2.TabIndex = 10;
             this.labelAvgHoras2.Text = "--:--:--";
+            this.labelAvgHoras2.TextChanged += new System.EventHandler(this.labelAvgHoras2_TextChanged);
             // 
             // label9
             // 
@@ -518,6 +562,7 @@
             this.labelAvgHoras1.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoras1.TabIndex = 8;
             this.labelAvgHoras1.Text = "--:--:--";
+            this.labelAvgHoras1.TextChanged += new System.EventHandler(this.labelAvgHoras1_TextChanged);
             // 
             // label6
             // 
@@ -542,7 +587,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 400);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(534, 22);
             this.statusStrip1.TabIndex = 1;
@@ -553,60 +598,65 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Hs. trabajadas";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(138, 163);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Hs. trabajadas (desc.)";
-            // 
-            // tbHorasTrabajadasDetalle
-            // 
-            this.tbHorasTrabajadasDetalle.Location = new System.Drawing.Point(9, 180);
-            this.tbHorasTrabajadasDetalle.Name = "tbHorasTrabajadasDetalle";
-            this.tbHorasTrabajadasDetalle.ReadOnly = true;
-            this.tbHorasTrabajadasDetalle.Size = new System.Drawing.Size(103, 20);
-            this.tbHorasTrabajadasDetalle.TabIndex = 20;
-            // 
-            // tbHorasTrabajadasDescDetalle
-            // 
-            this.tbHorasTrabajadasDescDetalle.Location = new System.Drawing.Point(139, 180);
-            this.tbHorasTrabajadasDescDetalle.Name = "tbHorasTrabajadasDescDetalle";
-            this.tbHorasTrabajadasDescDetalle.ReadOnly = true;
-            this.tbHorasTrabajadasDescDetalle.Size = new System.Drawing.Size(103, 20);
-            this.tbHorasTrabajadasDescDetalle.TabIndex = 21;
-            // 
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(490, 371);
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(139, 291);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.Size = new System.Drawing.Size(103, 25);
             this.button3.TabIndex = 2;
+            this.button3.Text = "Guardar todo";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // labelAvgHoraSalida
+            // 
+            this.labelAvgHoraSalida.AutoSize = true;
+            this.labelAvgHoraSalida.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgHoraSalida.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgHoraSalida.Location = new System.Drawing.Point(207, 274);
+            this.labelAvgHoraSalida.Name = "labelAvgHoraSalida";
+            this.labelAvgHoraSalida.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgHoraSalida.TabIndex = 16;
+            this.labelAvgHoraSalida.Text = "--:--:--";
+            this.labelAvgHoraSalida.TextChanged += new System.EventHandler(this.labelAvgHoraSalida_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(209, 251);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(132, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Horario de salida promedio";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(375, 119);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(66, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Invalidar";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 422);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(534, 426);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(550, 460);
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de horarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -676,6 +726,9 @@
         private System.Windows.Forms.TextBox tbHorasTrabajadasDescDetalle;
         private System.Windows.Forms.TextBox tbHorasTrabajadasDetalle;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label labelAvgHoraSalida;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

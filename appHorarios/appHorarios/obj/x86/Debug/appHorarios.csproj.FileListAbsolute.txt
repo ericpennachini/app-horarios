@@ -7,3 +7,11 @@ C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorario
 C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.csproj.GenerateResource.Cache
 C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.exe
 C:\Users\ericd\Trabajo\WINXIS - ADN SOFT\git\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.pdb
+D:\app horarios\app-horarios\appHorarios\appHorarios\bin\Debug\appHorarios.exe.config
+D:\app horarios\app-horarios\appHorarios\appHorarios\bin\Debug\appHorarios.exe
+D:\app horarios\app-horarios\appHorarios\appHorarios\bin\Debug\appHorarios.pdb
+D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.Form1.resources
+D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.Properties.Resources.resources
+D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.csproj.GenerateResource.Cache
+D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.exe
+D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.pdb

@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ios-8-Backup-icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -83,12 +86,46 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\128\ios-8-App Installer-icon.png" />
+    <Content Include="img\128\ios-8-App-Center-icon.png" />
+    <Content Include="img\128\ios-8-Backup-icon.png" />
+    <Content Include="img\128\ios-8-Calculator-icon.png" />
+    <Content Include="img\128\ios-8-Calendar-icon.png" />
+    <Content Include="img\128\ios-8-Camera-icon.png" />
+    <Content Include="img\128\ios-8-Clock-icon.png" />
+    <Content Include="img\128\ios-8-Contacts-icon.png" />
+    <Content Include="img\128\ios-8-Create-New-icon.png" />
+    <Content Include="img\128\ios-8-Dialer-icon.png" />
+    <Content Include="img\128\ios-8-Downloads-icon.png" />
+    <Content Include="img\128\ios-8-Driving-Mode-icon.png" />
+    <Content Include="img\128\ios-8-Email-icon.png" />
+    <Content Include="img\128\ios-8-File-Manager-icon.png" />
+    <Content Include="img\128\ios-8-FM-Radio-icon.png" />
+    <Content Include="img\128\ios-8-Gallery-icon.png" />
+    <Content Include="img\128\ios-8-Game-Center-icon.png" />
+    <Content Include="img\128\ios-8-Help-icon.png" />
+    <Content Include="img\128\ios-8-Message-icon.png" />
+    <Content Include="img\128\ios-8-Multiple-icon.png" />
+    <Content Include="img\128\ios-8-Music-icon.png" />
+    <Content Include="img\128\ios-8-Notes-icon.png" />
+    <Content Include="img\128\ios-8-Phone-Manager-icon.png" />
+    <Content Include="img\128\ios-8-Safari-icon.png" />
+    <Content Include="img\128\ios-8-Settings-icon.png" />
+    <Content Include="img\128\ios-8-Siri-icon.png" />
+    <Content Include="img\128\ios-8-Sound-Recorder-icon.png" />
+    <Content Include="img\128\ios-8-System-Update-icon.png" />
+    <Content Include="img\128\ios-8-Themes-icon.png" />
+    <Content Include="img\128\ios-8-Video-icon.png" />
+    <Content Include="img\128\ios-8-Vmall-icon.png" />
+    <Content Include="img\128\ios-8-Weather-icon.png" />
     <Content Include="img\icons8_Add_32px.png" />
     <Content Include="img\icons8_Checked_32px.png" />
     <Content Include="img\icons8_Multiply_32px.png" />
     <Content Include="img\icons8_Ok_48px.png" />
     <Content Include="img\icons8_Plus_Math_32px.png" />
     <Content Include="img\icons8_Save.ico" />
+    <Content Include="img\ios-8-Backup-icon.ico" />
+    <Content Include="ios-8-Backup-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

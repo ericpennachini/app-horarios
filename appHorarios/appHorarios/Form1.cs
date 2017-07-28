@@ -30,7 +30,6 @@ namespace appHorarios
             _nuevoRegEnCurso = false;
             dtpFechaRegistro.Enabled = false;
             dtpHoraEntrada.Enabled = false;
-            dtpTiempoDescanso.Enabled = false;
             dtpHoraSalida.Enabled = false;
             textBoxComentarios.Enabled = false;
             buttonCancelar.Enabled = false;
@@ -39,7 +38,10 @@ namespace appHorarios
             dtpHoraEntrada.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
             dtpHoraSalida.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
             dtpTiempoDescanso.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            dtpTiempoDescanso.Enabled = false;
             textBoxComentarios.Text = "";
+            checkBox1.Checked = false;
+            checkBox1.Enabled = false;
         }
 
         private void btnNuevoHabilitar_MouseEnter(object sender, EventArgs e)
@@ -62,6 +64,7 @@ namespace appHorarios
             textBoxComentarios.Enabled = true;
             buttonCancelar.Enabled = true;
             buttonGuardar.Enabled = true;
+            checkBox1.Enabled = true;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -76,6 +79,7 @@ namespace appHorarios
             regInsertar.HoraEntrada = TimeSpan.Parse(dtpHoraEntrada.Text);
             regInsertar.HoraSalida = TimeSpan.Parse(dtpHoraSalida.Text);
             regInsertar.TiempoDescanso = TimeSpan.Parse(dtpTiempoDescanso.Text);
+            regInsertar.DescansoValido = !(checkBox1.Checked);
             regInsertar.Observaciones = textBoxComentarios.Text;
             if (!_archivoReg.ListaRegistros.Contains(regInsertar))
             {
@@ -124,22 +128,6 @@ namespace appHorarios
             _timerAlerta.Stop();
         }
 
-        private void listView1_Click(object sender, EventArgs e)
-        {
-            //var selected = listView1.SelectedItems[0];
-            //DateTime f = DateTime.Parse(selected.Text);
-            //var obtenido = from r in _archivoReg.ListaRegistros
-            //               where r.Fecha == f
-            //               select r;
-            //Registro mostrar = obtenido.ElementAt(0);
-            //tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
-            //tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
-            //tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
-            //tbHorasTrabajadasDetalle.Text = ((mostrar.HoraSalida - mostrar.HoraEntrada) - mostrar.TiempoDescanso).ToString();
-            //tbHorasTrabajadasDescDetalle.Text = (mostrar.HoraSalida - mostrar.HoraEntrada).ToString();
-            //tbObservacionesDetalle.Text = mostrar.Observaciones;
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             _archivoReg.EscribirArchivo();
@@ -150,13 +138,15 @@ namespace appHorarios
             if (_archivoReg.ListaRegistros.Count > 0)
             {
                 TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadas);
-                labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString();
+                labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString(@"hh\:mm\:ss");
                 TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadasConDescanso);
-                labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString();
+                labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString(@"hh\:mm\:ss");
                 TimeSpan mostrarTiempoDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.TiempoDeDescanso);
-                labelAvgDescanso.Text = mostrarTiempoDescAvg.ToString();
+                labelAvgDescanso.Text = mostrarTiempoDescAvg.ToString(@"hh\:mm\:ss");
                 TimeSpan mostrarHoraEntradaAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorarioDeEntrada);
-                labelAvgHoraEntrada.Text = mostrarHoraEntradaAvg.ToString();
+                labelAvgHoraEntrada.Text = mostrarHoraEntradaAvg.ToString(@"hh\:mm\:ss");
+                TimeSpan mostrarHoraSalidaAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorarioDeSalida);
+                labelAvgHoraSalida.Text = mostrarHoraSalidaAvg.ToString(@"hh\:mm\:ss");
             }
             else
             {
@@ -174,11 +164,17 @@ namespace appHorarios
                                where r.Fecha == f
                                select r;
                 Registro mostrar = obtenido.ElementAt(0);
+                
                 tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
                 tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
                 tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
                 tbHorasTrabajadasDetalle.Text = ((mostrar.HoraSalida - mostrar.HoraEntrada) - mostrar.TiempoDescanso).ToString();
+                //var backColor1 = tbHorasTrabajadasDetalle.BackColor;
+                //tbHorasTrabajadasDetalle.BackColor = (mostrar.DescansoValido == false ? Color.LightSalmon : backColor1);
                 tbHorasTrabajadasDescDetalle.Text = (mostrar.HoraSalida - mostrar.HoraEntrada).ToString();
+                //var backColor2 = tbHorasTrabajadasDescDetalle.BackColor;
+                //tbHorasTrabajadasDescDetalle.BackColor = (mostrar.DescansoValido == false ? Color.LightSalmon : backColor2);
+
                 tbObservacionesDetalle.Text = mostrar.Observaciones;
             }
         }
@@ -186,6 +182,64 @@ namespace appHorarios
         private void button3_Click(object sender, EventArgs e)
         {
             _archivoReg.EscribirArchivo();
+        }
+
+        /// <summary>
+        /// Formatea el color del label de promedios que se le pasa por parámetro
+        /// dependiendo del timespan objetivo y si al ser menor el valor que el objetivo
+        /// ponerlo en rojo o verde dependiendo del valor del parametro booleano.
+        /// </summary>
+        /// <param name="labelFormatear">Label al que se quiere formatear el color</param>
+        /// <param name="tsObjetivo">TimeSpan con el tiempo que se usa para comparar</param>
+        /// <param name="menorEsRojo">Indica si al ser menor que el objetivo el label se pondrá en rojo o no.</param>
+        private void FormatearLabel(Label labelFormatear, TimeSpan tsObjetivo, Boolean menorEsRojo)
+        {
+            TimeSpan tGet = TimeSpan.Parse(labelFormatear.Text);
+            if (tGet < tsObjetivo)
+            {
+                labelFormatear.ForeColor = (menorEsRojo ? Color.DarkRed : Color.DarkGreen);
+            }
+            else
+            {
+                labelFormatear.ForeColor = (menorEsRojo ? Color.DarkGreen : Color.DarkRed);
+            }
+        }
+
+        private void labelAvgHoras1_TextChanged(object sender, EventArgs e)
+        {
+            FormatearLabel(labelAvgHoras1, new TimeSpan(8, 0, 0), true);
+        }
+
+        private void labelAvgHoras2_TextChanged(object sender, EventArgs e)
+        {
+            FormatearLabel(labelAvgHoras2, new TimeSpan(9, 0, 0), true);
+        }
+
+        private void labelAvgDescanso_TextChanged(object sender, EventArgs e)
+        {
+            FormatearLabel(labelAvgDescanso, new TimeSpan(1, 1, 0), false);
+        }
+
+        private void labelAvgHoraEntrada_TextChanged(object sender, EventArgs e)
+        {
+            FormatearLabel(labelAvgHoraEntrada, new TimeSpan(8, 5, 0), false);
+        }
+
+        private void labelAvgHoraSalida_TextChanged(object sender, EventArgs e)
+        {
+            FormatearLabel(labelAvgHoraSalida, new TimeSpan(17, 0, 0), true);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                dtpTiempoDescanso.Enabled = false;
+            }
+            else
+            {
+                dtpTiempoDescanso.Enabled = true;
+            }
         }
     }
 }
