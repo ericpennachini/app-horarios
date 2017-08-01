@@ -46,12 +46,16 @@ namespace appHorarios
             }
         }
 
-        public void EscribirArchivo(ToolStripProgressBar barra)
+        public void EscribirArchivo(ToolStripProgressBar barra, Boolean salir)
         {
+            if (barra != null)
+            {
+                barra.Visible = true;
+                barra.Minimum = 0;
+                barra.Maximum = ListaRegistros.Count; 
+            }
             using (StreamWriter archivo = new StreamWriter("archivoReg.txt"))
             {
-                int div = 100 % ListaRegistros.Count;
-                barra.Maximum = div * ListaRegistros.Count;
                 foreach (Registro r in ListaRegistros)
                 {
                     String linea = r.Fecha.ToShortDateString()
@@ -63,7 +67,14 @@ namespace appHorarios
                     archivo.WriteLine(linea);
                     if (barra != null)
                     {
-                        barra.Increment(div);
+                        barra.Value += 1;
+                        if (barra.Value == ListaRegistros.Count)
+                        {
+                            if (!salir)
+                            {
+                                MessageBox.Show("Cambios guardados");
+                            }
+                        }
                     }
                 }
             }

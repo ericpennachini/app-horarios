@@ -23,6 +23,17 @@ namespace appHorarios
             _nuevoRegEnCurso = false;
             _timerAlerta = new Timer() { Interval = 1500 };
             listView1.View = View.List;
+
+            
+        }
+
+        private void InicializarComboMeses()
+        {
+            List<string> mesesDisponibles = new List<string>();
+            foreach (Registro r in _archivoReg.ListaRegistros)
+            {
+                
+            }
         }
 
         private void ReinicializarVentana()
@@ -85,7 +96,9 @@ namespace appHorarios
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {     
+        {
+            toolStripProgressBar1.Value = 0;
+            toolStripProgressBar1.Visible = false;
             switch (tabControl1.SelectedIndex)
             {
                 case 0:
@@ -120,7 +133,7 @@ namespace appHorarios
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _archivoReg.EscribirArchivo(null);
+            _archivoReg.EscribirArchivo(null, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -159,19 +172,14 @@ namespace appHorarios
                 tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
                 tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
                 tbHorasTrabajadasDetalle.Text = ((mostrar.HoraSalida - mostrar.HoraEntrada) - mostrar.TiempoDescanso).ToString();
-                //var backColor1 = tbHorasTrabajadasDetalle.BackColor;
-                //tbHorasTrabajadasDetalle.BackColor = (mostrar.DescansoValido == false ? Color.LightSalmon : backColor1);
                 tbHorasTrabajadasDescDetalle.Text = (mostrar.HoraSalida - mostrar.HoraEntrada).ToString();
-                //var backColor2 = tbHorasTrabajadasDescDetalle.BackColor;
-                //tbHorasTrabajadasDescDetalle.BackColor = (mostrar.DescansoValido == false ? Color.LightSalmon : backColor2);
-
                 tbObservacionesDetalle.Text = mostrar.Observaciones;
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            _archivoReg.EscribirArchivo(toolStripProgressBar1);
+            _archivoReg.EscribirArchivo(toolStripProgressBar1, false);
         }
 
         /// <summary>
@@ -246,6 +254,11 @@ namespace appHorarios
             labelAvgDescanso.Text = "--:--:--";
             labelAvgHoraEntrada.Text = "--:--:--";
             labelAvgHoraSalida.Text = "--:--:--";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
