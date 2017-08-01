@@ -46,10 +46,12 @@ namespace appHorarios
             }
         }
 
-        public void EscribirArchivo()
+        public void EscribirArchivo(ToolStripProgressBar barra)
         {
             using (StreamWriter archivo = new StreamWriter("archivoReg.txt"))
             {
+                int div = 100 % ListaRegistros.Count;
+                barra.Maximum = div * ListaRegistros.Count;
                 foreach (Registro r in ListaRegistros)
                 {
                     String linea = r.Fecha.ToShortDateString()
@@ -59,6 +61,10 @@ namespace appHorarios
                         + ";" + r.DescansoValido.ToString()
                         + ";" + r.Observaciones;
                     archivo.WriteLine(linea);
+                    if (barra != null)
+                    {
+                        barra.Increment(div);
+                    }
                 }
             }
         }

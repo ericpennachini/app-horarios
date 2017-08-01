@@ -44,16 +44,6 @@ namespace appHorarios
             checkBox1.Enabled = false;
         }
 
-        private void btnNuevoHabilitar_MouseEnter(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "Habilta los campos para agregar un nuevo registro";
-        }
-
-        private void btnNuevoHabilitar_MouseLeave(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "";
-        }
-
         private void btnNuevoHabilitar_Click(object sender, EventArgs e)
         {
             _nuevoRegEnCurso = true;
@@ -130,7 +120,7 @@ namespace appHorarios
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _archivoReg.EscribirArchivo();
+            _archivoReg.EscribirArchivo(null);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -181,7 +171,7 @@ namespace appHorarios
 
         private void button3_Click(object sender, EventArgs e)
         {
-            _archivoReg.EscribirArchivo();
+            _archivoReg.EscribirArchivo(toolStripProgressBar1);
         }
 
         /// <summary>
@@ -194,14 +184,21 @@ namespace appHorarios
         /// <param name="menorEsRojo">Indica si al ser menor que el objetivo el label se pondrá en rojo o no.</param>
         private void FormatearLabel(Label labelFormatear, TimeSpan tsObjetivo, Boolean menorEsRojo)
         {
-            TimeSpan tGet = TimeSpan.Parse(labelFormatear.Text);
-            if (tGet < tsObjetivo)
+            if (labelFormatear.Text != "--:--:--")
             {
-                labelFormatear.ForeColor = (menorEsRojo ? Color.DarkRed : Color.DarkGreen);
+                TimeSpan tGet = TimeSpan.Parse(labelFormatear.Text);
+                if (tGet < tsObjetivo)
+                {
+                    labelFormatear.ForeColor = (menorEsRojo ? Color.DarkRed : Color.DarkGreen);
+                }
+                else
+                {
+                    labelFormatear.ForeColor = (menorEsRojo ? Color.DarkGreen : Color.DarkRed);
+                } 
             }
             else
             {
-                labelFormatear.ForeColor = (menorEsRojo ? Color.DarkGreen : Color.DarkRed);
+                labelFormatear.ForeColor = Color.Gray;
             }
         }
 
@@ -240,6 +237,15 @@ namespace appHorarios
             {
                 dtpTiempoDescanso.Enabled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            labelAvgHoras1.Text = "--:--:--";
+            labelAvgHoras2.Text = "--:--:--";
+            labelAvgDescanso.Text = "--:--:--";
+            labelAvgHoraEntrada.Text = "--:--:--";
+            labelAvgHoraSalida.Text = "--:--:--";
         }
     }
 }
