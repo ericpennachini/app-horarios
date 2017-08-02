@@ -84,6 +84,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,7 +106,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(510, 361);
+            this.tabControl1.Size = new System.Drawing.Size(558, 361);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -119,7 +120,7 @@
             this.tabNuevo.Location = new System.Drawing.Point(4, 22);
             this.tabNuevo.Name = "tabNuevo";
             this.tabNuevo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNuevo.Size = new System.Drawing.Size(502, 335);
+            this.tabNuevo.Size = new System.Drawing.Size(550, 335);
             this.tabNuevo.TabIndex = 0;
             this.tabNuevo.Text = "Nuevo registro";
             this.tabNuevo.UseVisualStyleBackColor = true;
@@ -129,7 +130,7 @@
             this.labelAlerta.BackColor = System.Drawing.Color.DarkRed;
             this.labelAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAlerta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelAlerta.Location = new System.Drawing.Point(180, 25);
+            this.labelAlerta.Location = new System.Drawing.Point(196, 25);
             this.labelAlerta.Name = "labelAlerta";
             this.labelAlerta.Size = new System.Drawing.Size(143, 28);
             this.labelAlerta.TabIndex = 9;
@@ -143,7 +144,7 @@
             this.buttonGuardar.Enabled = false;
             this.buttonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.Image")));
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardar.Location = new System.Drawing.Point(250, 282);
+            this.buttonGuardar.Location = new System.Drawing.Point(298, 282);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(120, 47);
             this.buttonGuardar.TabIndex = 6;
@@ -157,7 +158,7 @@
             this.buttonCancelar.Enabled = false;
             this.buttonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancelar.Image")));
             this.buttonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancelar.Location = new System.Drawing.Point(376, 282);
+            this.buttonCancelar.Location = new System.Drawing.Point(424, 282);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(120, 47);
             this.buttonCancelar.TabIndex = 7;
@@ -183,14 +184,15 @@
             this.panel1.Controls.Add(this.labelFecha);
             this.panel1.Location = new System.Drawing.Point(6, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 217);
+            this.panel1.Size = new System.Drawing.Size(538, 217);
             this.panel1.TabIndex = 1;
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(375, 119);
+            this.checkBox1.Location = new System.Drawing.Point(423, 119);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(66, 17);
             this.checkBox1.TabIndex = 10;
@@ -206,7 +208,7 @@
             this.dtpTiempoDescanso.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpTiempoDescanso.Location = new System.Drawing.Point(194, 117);
             this.dtpTiempoDescanso.Name = "dtpTiempoDescanso";
-            this.dtpTiempoDescanso.Size = new System.Drawing.Size(170, 20);
+            this.dtpTiempoDescanso.Size = new System.Drawing.Size(218, 20);
             this.dtpTiempoDescanso.TabIndex = 4;
             this.dtpTiempoDescanso.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -218,7 +220,7 @@
             this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHoraSalida.Location = new System.Drawing.Point(194, 91);
             this.dtpHoraSalida.Name = "dtpHoraSalida";
-            this.dtpHoraSalida.Size = new System.Drawing.Size(247, 20);
+            this.dtpHoraSalida.Size = new System.Drawing.Size(295, 20);
             this.dtpHoraSalida.TabIndex = 3;
             this.dtpHoraSalida.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -230,7 +232,7 @@
             this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHoraEntrada.Location = new System.Drawing.Point(194, 65);
             this.dtpHoraEntrada.Name = "dtpHoraEntrada";
-            this.dtpHoraEntrada.Size = new System.Drawing.Size(247, 20);
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(295, 20);
             this.dtpHoraEntrada.TabIndex = 2;
             this.dtpHoraEntrada.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -243,7 +245,7 @@
             this.textBoxComentarios.Location = new System.Drawing.Point(194, 146);
             this.textBoxComentarios.Multiline = true;
             this.textBoxComentarios.Name = "textBoxComentarios";
-            this.textBoxComentarios.Size = new System.Drawing.Size(247, 53);
+            this.textBoxComentarios.Size = new System.Drawing.Size(295, 53);
             this.textBoxComentarios.TabIndex = 5;
             // 
             // label1
@@ -264,7 +266,7 @@
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRegistro.Location = new System.Drawing.Point(194, 27);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(247, 20);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(295, 20);
             this.dtpFechaRegistro.TabIndex = 1;
             // 
             // labelHoraSalida
@@ -323,7 +325,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(502, 335);
+            this.tabListado.Size = new System.Drawing.Size(550, 335);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Ver registros";
             // 
@@ -342,7 +344,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(248, 7);
+            this.groupBox1.Location = new System.Drawing.Point(296, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(248, 322);
             this.groupBox1.TabIndex = 1;
@@ -472,7 +474,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView1.Size = new System.Drawing.Size(235, 323);
+            this.listView1.Size = new System.Drawing.Size(274, 323);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -487,7 +489,7 @@
             this.tabEstadisticas.Controls.Add(this.button1);
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.tabEstadisticas.Name = "tabEstadisticas";
-            this.tabEstadisticas.Size = new System.Drawing.Size(502, 335);
+            this.tabEstadisticas.Size = new System.Drawing.Size(550, 335);
             this.tabEstadisticas.TabIndex = 2;
             this.tabEstadisticas.Text = "Estadísticas";
             this.tabEstadisticas.UseVisualStyleBackColor = true;
@@ -496,23 +498,19 @@
             // 
             this.comboBoxMeses.Enabled = false;
             this.comboBoxMeses.FormattingEnabled = true;
-            this.comboBoxMeses.Items.AddRange(new object[] {
-            "Mayo 2017",
-            "Junio 2017",
-            "Julio 2017",
-            "Agosto 2017"});
-            this.comboBoxMeses.Location = new System.Drawing.Point(387, 93);
+            this.comboBoxMeses.Location = new System.Drawing.Point(409, 118);
             this.comboBoxMeses.Name = "comboBoxMeses";
-            this.comboBoxMeses.Size = new System.Drawing.Size(99, 21);
+            this.comboBoxMeses.Size = new System.Drawing.Size(128, 21);
             this.comboBoxMeses.TabIndex = 6;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.radioButton3);
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(387, 8);
+            this.groupBox3.Location = new System.Drawing.Point(409, 8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(99, 78);
+            this.groupBox3.Size = new System.Drawing.Size(128, 104);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Opciones";
@@ -527,6 +525,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Mensual";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -542,9 +541,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(387, 170);
+            this.button2.Location = new System.Drawing.Point(409, 198);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
+            this.button2.Size = new System.Drawing.Size(128, 30);
             this.button2.TabIndex = 4;
             this.button2.Text = "Reiniciar";
             this.button2.UseVisualStyleBackColor = true;
@@ -564,7 +563,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(3, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(375, 324);
+            this.groupBox2.Size = new System.Drawing.Size(400, 324);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información";
@@ -676,9 +675,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(387, 141);
+            this.button1.Location = new System.Drawing.Point(409, 162);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
+            this.button1.Size = new System.Drawing.Size(128, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
@@ -689,9 +688,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripProgressBar1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 399);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 400);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(534, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(582, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -706,11 +705,23 @@
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             this.toolStripProgressBar1.Visible = false;
             // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(13, 67);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(110, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Acumulado desde";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 421);
+            this.ClientSize = new System.Drawing.Size(582, 422);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -799,6 +810,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ComboBox comboBoxMeses;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }
 

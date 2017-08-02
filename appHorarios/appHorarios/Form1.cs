@@ -24,15 +24,20 @@ namespace appHorarios
             _timerAlerta = new Timer() { Interval = 1500 };
             listView1.View = View.List;
 
-            
+            InicializarComboMeses();
         }
 
         private void InicializarComboMeses()
         {
             List<string> mesesDisponibles = new List<string>();
+            int mes = 0;
             foreach (Registro r in _archivoReg.ListaRegistros)
             {
-                
+                if (mes != r.Fecha.Month)
+                {
+                    mes = r.Fecha.Month;
+                    comboBoxMeses.Items.Add(ArchivoRegistro.MESES[mes]);
+                }
             }
         }
 
@@ -138,17 +143,37 @@ namespace appHorarios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool verTotales = radioButton1.Checked;
+            bool verMensual = radioButton2.Checked;
+            bool verAcumulado = radioButton3.Checked;
+            List<Registro> listaEnviar = new List<Registro>();
+            int mesCombo = ArchivoRegistro.MESES.FirstOrDefault(x => x.Value == comboBoxMeses.SelectedItem.ToString()).Key;
+
+            if (verTotales)
+            {
+                listaEnviar.AddRange(_archivoReg.ListaRegistros);
+            }
+            if (verMensual)
+            {
+                listaEnviar.AddRange(_archivoReg.ListaRegistros.FindAll(r => r.Fecha.Month == mesCombo));
+            }
+            if (verAcumulado)
+            {
+                listaEnviar.AddRange(_archivoReg.ListaRegistros.FindAll(r => r.Fecha.Month >= mesCombo));
+            }
+
+
             if (_archivoReg.ListaRegistros.Count > 0)
             {
-                TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadas);
+                TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorasTrabajadas);
                 labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorasTrabajadasConDescanso);
+                TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorasTrabajadasConDescanso);
                 labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarTiempoDescAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.TiempoDeDescanso);
+                TimeSpan mostrarTiempoDescAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.TiempoDeDescanso);
                 labelAvgDescanso.Text = mostrarTiempoDescAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarHoraEntradaAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorarioDeEntrada);
+                TimeSpan mostrarHoraEntradaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorarioDeEntrada);
                 labelAvgHoraEntrada.Text = mostrarHoraEntradaAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarHoraSalidaAvg = Estadisticas.CalcularPromedio(_archivoReg.ListaRegistros, Promedios.HorarioDeSalida);
+                TimeSpan mostrarHoraSalidaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorarioDeSalida);
                 labelAvgHoraSalida.Text = mostrarHoraSalidaAvg.ToString(@"hh\:mm\:ss");
             }
             else
@@ -267,7 +292,19 @@ namespace appHorarios
             {
                 comboBoxMeses.Enabled = false;
             }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
             if (radioButton2.Checked == true)
+            {
+                comboBoxMeses.Enabled = true;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked == true)
             {
                 comboBoxMeses.Enabled = true;
             }

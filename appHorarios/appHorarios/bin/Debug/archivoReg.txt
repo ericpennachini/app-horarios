@@ -1,1 +1,33 @@
-13/6/2017;08:10:00;17:19:00;01:29:00;True;horario de entrada aproximado
+13/06/2017;08:10:00;17:19:00;01:29:00;True;horario de entrada aproximado
+14/06/2017;08:41:00;17:25:00;01:54:00;True;
+15/06/2017;08:15:00;17:40:00;01:14:00;True;horario de entrada aproximado
+16/06/2017;08:15:00;17:05:00;01:02:00;True;horario de entrada aproximado
+19/06/2017;08:34:00;17:15:00;01:25:00;True;
+21/06/2017;08:14:00;17:40:00;01:11:11;True;
+22/06/2017;08:10:00;17:06:00;01:15:00;True;horario de entrada aproximado / descanso aproximado
+23/06/2017;08:35:00;17:32:00;02:11:03;True;
+26/06/2017;08:14:00;17:10:00;01:24:36;True;horario de salida aproximado
+27/06/2017;08:20:00;17:09:00;01:28:00;True;
+28/06/2017;08:30:00;17:32:00;01:31:00;True;horario de entrada aproximado
+29/06/2017;08:31:00;17:25:00;01:28:00;True;
+30/06/2017;08:10:00;17:40:00;01:38:00;True;horario de entrada aproximado
+03/07/2017;08:23:00;17:35:00;02:03:00;True;dentro del descanso tuve que ir a casa a llevarle la llave a jessy
+04/07/2017;08:34:00;17:30:00;02:18:00;True;descanso demasiado largo
+05/07/2017;08:22:00;17:25:00;02:00:00;True;descanso demasiado largo / tiempo de descanso aproximado / horario de salida aproximado
+06/07/2017;08:11:00;15:33:00;01:08:00;True;salida anticipada para ir a hacer trámite del carnet
+07/07/2017;08:30:00;18:29:00;02:01:17;True;horario de entrada aproximado / descanso demasiado largo
+10/07/2017;08:34:00;17:56:00;01:03:00;True;
+12/07/2017;08:06:00;17:40:00;01:14:52;True;horario de salida aproximado
+13/07/2017;08:05:00;17:07:00;01:00:00;True;tiempo de descanso aproximado
+17/07/2017;08:10:00;17:24:00;02:29:00;True;horario de entrada aproximado / descanso demasiado largo
+18/07/2017;08:05:00;17:15:00;01:40:00;True;horario de entrada aproximado / horario de salida aproximado
+19/07/2017;08:37:00;17:12:00;00:00:00;True;no hubo descanso
+20/07/2017;08:35:00;17:52:00;00:30:00;True;horario de entrada aproximado / horario de salida aproximado
+21/07/2017;08:20:00;17:15:00;00:58:00;True;horario de entrada aproximado
+24/07/2017;08:17:00;16:10:00;01:39:00;True;horario reducido por salida para trámite
+25/07/2017;08:22:00;18:22:00;01:15:00;True;horario de descanso aproximado
+26/07/2017;08:34:00;17:26:00;01:22:53;True;
+27/07/2017;08:13:00;17:59:00;01:17:53;True;
+28/07/2017;12:32:00;18:40:00;00:00:00;False;Salida a charla de carnet de conducir
+31/07/2017;08:50:00;17:40:00;01:25:44;True;horario de entrada aproximado
+01/08/2017;08:38:00;17:32:00;01:12:28;True;

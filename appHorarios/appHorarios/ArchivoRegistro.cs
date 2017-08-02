@@ -12,9 +12,24 @@ namespace appHorarios
         public List<Registro> ListaRegistros { get; set; }
         public FileStream objArchivo { get; set; }
 
+        public static Dictionary<int, string> MESES;
+
         public ArchivoRegistro()
         {
             ListaRegistros = new List<Registro>();
+            MESES = new Dictionary<int, string>();
+            MESES.Add(1, "Enero");
+            MESES.Add(2, "Febrero");
+            MESES.Add(3, "Marzo");
+            MESES.Add(4, "Abril");
+            MESES.Add(5, "Mayo");
+            MESES.Add(6, "Junio");
+            MESES.Add(7, "Julio");
+            MESES.Add(8, "Agosto");
+            MESES.Add(9, "Septiembre");
+            MESES.Add(10, "Octubre");
+            MESES.Add(11, "Noviembre");
+            MESES.Add(12, "Diciembre");
         }
 
         public void AbrirArchivo()

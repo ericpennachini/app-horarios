@@ -15,4 +15,3 @@ D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.P
 D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.csproj.GenerateResource.Cache
 D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.exe
 D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.pdb
-D:\app horarios\app-horarios\appHorarios\appHorarios\obj\x86\Debug\appHorarios.csprojResolveAssemblyReference.cache
