@@ -260,5 +260,17 @@ namespace appHorarios
         {
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                comboBoxMeses.Enabled = false;
+            }
+            if (radioButton2.Checked == true)
+            {
+                comboBoxMeses.Enabled = true;
+            }
+        }
     }
 }
