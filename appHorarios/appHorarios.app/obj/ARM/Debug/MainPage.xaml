@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="appHorarios.app.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:appHorarios.app"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Default">
+        <TextBlock x:ConnectionId='1' x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Control de horarios app" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Pivot Title="Funciones" Margin="0,54,0,40" TabNavigation="Local" FontSize="15">
+            <PivotItem Header="Nuevo registro" TabIndex="0" FontSize="10">
+                <Grid>
+                    <TextBlock x:ConnectionId='2' x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" Text="Fecha" VerticalAlignment="Top" FontSize="14"/>
+                    <DatePicker x:ConnectionId='3' x:Name="dtpFecha" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="316"/>
+                    <TextBlock x:ConnectionId='4' x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,126,0,0" TextWrapping="WrapWholeWords" Text="Hora de entrada" VerticalAlignment="Top" FontSize="14" Height="59" TextTrimming="WordEllipsis" Width="69"/>
+                    <TimePicker HorizontalAlignment="Left" Margin="84,126,0,0" VerticalAlignment="Top" Width="199" Height="32"/>
+                    <TextBlock x:ConnectionId='5' x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,185,0,0" TextWrapping="WrapWholeWords" Text="Hora de salida" VerticalAlignment="Top" FontSize="14" Height="59" TextTrimming="WordEllipsis" Width="69"/>
+                    <TimePicker HorizontalAlignment="Left" Margin="84,185,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='6' x:Name="textBlock4" HorizontalAlignment="Left" Margin="10,244,0,0" TextWrapping="WrapWholeWords" Text="Tiempo de descanso" VerticalAlignment="Top" FontSize="14" Height="59" TextTrimming="WordEllipsis" Width="69"/>
+                    <TimePicker HorizontalAlignment="Left" Margin="84,244,0,0" VerticalAlignment="Top"/>
+                    <ToggleSwitch Margin="10,281,0,130" OnContent="Válido" OffContent="No válido" IsOn="True"/>
+                    <TextBlock x:ConnectionId='7' x:Name="textBlock5" HorizontalAlignment="Left" Margin="10,326,0,0" TextWrapping="Wrap" Text="Observaciones" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:ConnectionId='8' x:Name="textBox" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="60" Width="316" AcceptsReturn="True" FontSize="12" IsSpellCheckEnabled="False"/>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Ver registros" TabIndex="1">
+                <Grid>
+                    <TextBlock Text="Listado de registros" />
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Estadísticas" TabIndex="2">
+                <Grid>
+                    <TextBlock Text="Estadísticas" />
+                </Grid>
+            </PivotItem>
+        </Pivot>
+        <CommandBar Margin="0,592,0,0">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Accept" Label="AppBarButton"/>
+            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+        </CommandBar>
+
+    </Grid>
+</Page>
+

@@ -147,7 +147,11 @@ namespace appHorarios
             bool verMensual = radioButton2.Checked;
             bool verAcumulado = radioButton3.Checked;
             List<Registro> listaEnviar = new List<Registro>();
-            int mesCombo = ArchivoRegistro.MESES.FirstOrDefault(x => x.Value == comboBoxMeses.SelectedItem.ToString()).Key;
+            int mesCombo = 0;
+            if (comboBoxMeses.SelectedItem != null)
+            {
+                mesCombo = ArchivoRegistro.MESES.FirstOrDefault(x => x.Value == comboBoxMeses.SelectedItem.ToString()).Key; 
+            }
 
             if (verTotales)
             {
@@ -299,6 +303,7 @@ namespace appHorarios
             if (radioButton2.Checked == true)
             {
                 comboBoxMeses.Enabled = true;
+                comboBoxMeses.SelectedIndex = 0;
             }
         }
 
@@ -307,6 +312,7 @@ namespace appHorarios
             if (radioButton3.Checked == true)
             {
                 comboBoxMeses.Enabled = true;
+                comboBoxMeses.SelectedIndex = 0;
             }
         }
     }
