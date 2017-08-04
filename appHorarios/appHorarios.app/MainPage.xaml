@@ -19,10 +19,11 @@
                     <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,185,0,0" TextWrapping="WrapWholeWords" Text="Hora de salida" VerticalAlignment="Top" FontSize="14" Height="59" TextTrimming="WordEllipsis" Width="69"/>
                     <TimePicker HorizontalAlignment="Left" Margin="84,185,0,0" VerticalAlignment="Top"/>
                     <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="10,244,0,0" TextWrapping="WrapWholeWords" Text="Tiempo de descanso" VerticalAlignment="Top" FontSize="14" Height="59" TextTrimming="WordEllipsis" Width="69"/>
-                    <TimePicker HorizontalAlignment="Left" Margin="84,244,0,0" VerticalAlignment="Top"/>
-                    <ToggleSwitch Margin="10,281,0,130" OnContent="Válido" OffContent="No válido" IsOn="True"/>
+                    <TimePicker x:Name="tmpTiempoDescanso" HorizontalAlignment="Left" Margin="84,244,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="checkBox" Content="Invalidar" HorizontalAlignment="Left" Margin="84,282,0,0" VerticalAlignment="Top" Click="checkBox_Click"/>
                     <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="10,326,0,0" TextWrapping="Wrap" Text="Observaciones" VerticalAlignment="Top" FontSize="14"/>
                     <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="60" Width="316" AcceptsReturn="True" FontSize="12" IsSpellCheckEnabled="False"/>
+                    
 
                 </Grid>
             </PivotItem>
@@ -41,8 +42,8 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton Icon="Accept" Label="AppBarButton"/>
-            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+            <AppBarButton Icon="Accept" Label="Guardar"/>
+            <AppBarButton Icon="Cancel" Label="Cancelar"/>
         </CommandBar>
 
     </Grid>

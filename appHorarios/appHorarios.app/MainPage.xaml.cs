@@ -26,5 +26,17 @@ namespace appHorarios.app
         {
             this.InitializeComponent();
         }
+
+        private void checkBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (checkBox.IsChecked == true)
+            {
+                tmpTiempoDescanso.IsEnabled = false;
+            }
+            else
+            {
+                tmpTiempoDescanso.IsEnabled = true;
+            }
+        }
     }
 }
