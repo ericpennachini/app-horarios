@@ -48,7 +48,10 @@ namespace appHorarios
                         HoraSalida = TimeSpan.Parse(campos[2]),
                         TiempoDescanso = TimeSpan.Parse(campos[3]),
                         DescansoValido = Boolean.Parse(campos[4]),
-                        Observaciones = campos[5]
+                        Observaciones = campos[5],
+                        IdaBicicleta = (campos[6] == "" ? new TimeSpan(0, 0, 0) : TimeSpan.Parse(campos[6])),
+                        VueltaBicicleta = (campos[7] == "" ? new TimeSpan(0, 0, 0) : TimeSpan.Parse(campos[7])),
+                        DetalleBicicleta = campos[8]
                     });
                 }
             }
@@ -78,7 +81,10 @@ namespace appHorarios
                         + ";" + r.HoraSalida.ToString()
                         + ";" + r.TiempoDescanso.ToString()
                         + ";" + r.DescansoValido.ToString()
-                        + ";" + r.Observaciones;
+                        + ";" + r.Observaciones
+                        + ";" + r.IdaBicicleta.ToString()
+                        + ";" + r.VueltaBicicleta.ToString()
+                        + ";" + r.DetalleBicicleta.ToString();
                     archivo.WriteLine(linea);
                     if (barra != null)
                     {

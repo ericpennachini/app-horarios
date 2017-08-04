@@ -13,6 +13,9 @@ namespace appHorarios
         public TimeSpan TiempoDescanso { get; set; }
         public Boolean DescansoValido { get; set; }
         public String Observaciones { get; set; }
+        public TimeSpan IdaBicicleta { get; set; }
+        public TimeSpan VueltaBicicleta { get; set; }
+        public String DetalleBicicleta { get; set; }
 
         public Registro()
         {

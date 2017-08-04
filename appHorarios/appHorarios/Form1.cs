@@ -54,10 +54,15 @@ namespace appHorarios
             dtpHoraEntrada.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
             dtpHoraSalida.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
             dtpTiempoDescanso.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            dtpIdaBicicleta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            dtpVueltaBicicleta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            textBoxDetalleBicicleta.Text = "";
             dtpTiempoDescanso.Enabled = false;
             textBoxComentarios.Text = "";
             checkBox1.Checked = false;
             checkBox1.Enabled = false;
+            checkBox2.Enabled = false;
+            groupBox4.Enabled = false;
         }
 
         private void btnNuevoHabilitar_Click(object sender, EventArgs e)
@@ -71,6 +76,7 @@ namespace appHorarios
             buttonCancelar.Enabled = true;
             buttonGuardar.Enabled = true;
             checkBox1.Enabled = true;
+            checkBox2.Enabled = true;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -87,6 +93,9 @@ namespace appHorarios
             regInsertar.TiempoDescanso = TimeSpan.Parse(dtpTiempoDescanso.Text);
             regInsertar.DescansoValido = !(checkBox1.Checked);
             regInsertar.Observaciones = textBoxComentarios.Text;
+            regInsertar.IdaBicicleta = TimeSpan.Parse(dtpIdaBicicleta.Text);
+            regInsertar.VueltaBicicleta = TimeSpan.Parse(dtpVueltaBicicleta.Text);
+            regInsertar.DetalleBicicleta = textBoxDetalleBicicleta.Text;
             if (!_archivoReg.ListaRegistros.Contains(regInsertar))
             {
                 _archivoReg.ListaRegistros.Add(regInsertar);
@@ -122,6 +131,7 @@ namespace appHorarios
                         foreach (Registro r in _archivoReg.ListaRegistros)
                         {
                             listView1.Items.Add(r.Fecha.ToShortDateString());
+                            groupBox5.Visible = false;
                         }
                     }
                     break;
@@ -179,6 +189,10 @@ namespace appHorarios
                 labelAvgHoraEntrada.Text = mostrarHoraEntradaAvg.ToString(@"hh\:mm\:ss");
                 TimeSpan mostrarHoraSalidaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorarioDeSalida);
                 labelAvgHoraSalida.Text = mostrarHoraSalidaAvg.ToString(@"hh\:mm\:ss");
+                TimeSpan mostrarIdaBicicletaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.TiempoIdaBicicleta);
+                labelAvgIdaBicicleta.Text = mostrarIdaBicicletaAvg.ToString(@"hh\:mm\:ss");
+                TimeSpan mostrarVueltaBicicletaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.TiempoVueltaBicicleta);
+                labelAvgVueltaBicicleta.Text = mostrarVueltaBicicletaAvg.ToString(@"hh\:mm\:ss");
             }
             else
             {
@@ -196,13 +210,25 @@ namespace appHorarios
                                where r.Fecha == f
                                select r;
                 Registro mostrar = obtenido.ElementAt(0);
-                
                 tbHoraEntradaDetalle.Text = mostrar.HoraEntrada.ToString();
                 tbHoraSalidaDetalle.Text = mostrar.HoraSalida.ToString();
                 tbTiempoDescDetalle.Text = mostrar.TiempoDescanso.ToString();
                 tbHorasTrabajadasDetalle.Text = ((mostrar.HoraSalida - mostrar.HoraEntrada) - mostrar.TiempoDescanso).ToString();
                 tbHorasTrabajadasDescDetalle.Text = (mostrar.HoraSalida - mostrar.HoraEntrada).ToString();
                 tbObservacionesDetalle.Text = mostrar.Observaciones;
+                if (mostrar.IdaBicicleta.ToString() == "00:00:00" &&
+                    mostrar.VueltaBicicleta.ToString() == "00:00:00" &&
+                    mostrar.DetalleBicicleta == "")
+                {
+                    groupBox5.Visible = false;
+                }
+                else
+                {
+                    groupBox5.Visible = true;
+                    tbIdaBicicleta.Text = mostrar.IdaBicicleta.ToString();
+                    tbVueltaBicicleta.Text = mostrar.VueltaBicicleta.ToString();
+                    tbDetalleBicicleta.Text = mostrar.DetalleBicicleta;
+                }
             }
         }
 
@@ -313,6 +339,18 @@ namespace appHorarios
             {
                 comboBoxMeses.Enabled = true;
                 comboBoxMeses.SelectedIndex = 0;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                groupBox4.Enabled = true;
+            }
+            else
+            {
+                groupBox4.Enabled = false;
             }
         }
     }

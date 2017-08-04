@@ -16,14 +16,6 @@ namespace appHorarios
             List<TimeSpan> acumulador = new List<TimeSpan>();
             double prom;
             long promL;
-            //List<Registro> regs2 = new List<Registro>(regs);
-            //foreach (Registro reg in regs2)
-            //{
-            //    if (reg.DescansoValido == false)
-            //    {
-            //        regs.Remove(reg);
-            //    }
-            //}
             switch (t)
             {
                 case 0:
@@ -82,6 +74,32 @@ namespace appHorarios
                     promL = Convert.ToInt64(prom);
                     resultado = new TimeSpan(promL);
                     break;
+                case 5:
+                    acumulador.Clear();
+                    foreach (Registro r in regs)
+                    {
+                        if (r.IdaBicicleta.ToString() != "00:00:00")
+                        {
+                            acumulador.Add(r.IdaBicicleta);
+                        }
+                    }
+                    prom = acumulador.Average(ts => ts.Ticks);
+                    promL = Convert.ToInt64(prom);
+                    resultado = new TimeSpan(promL);
+                    break;
+                case 6:
+                    acumulador.Clear();
+                    foreach (Registro r in regs)
+                    {
+                        if (r.VueltaBicicleta.ToString() != "00:00:00")
+                        {
+                            acumulador.Add(r.VueltaBicicleta);
+                        }
+                    }
+                    prom = acumulador.Average(ts => ts.Ticks);
+                    promL = Convert.ToInt64(prom);
+                    resultado = new TimeSpan(promL);
+                    break;
             }
 
             return resultado;
@@ -95,6 +113,8 @@ namespace appHorarios
         HorasTrabajadasConDescanso,
         TiempoDeDescanso,
         HorarioDeEntrada,
-        HorarioDeSalida
+        HorarioDeSalida,
+        TiempoIdaBicicleta,
+        TiempoVueltaBicicleta
     }
 }
