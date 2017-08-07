@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="msgBtnActualizar" xml:space="preserve">
+    <value>Actualiza las estadísticas en base a las opciones</value>
+  </data>
+  <data name="msgBtnCancelar" xml:space="preserve">
+    <value>Cancela todos los cambios y reinicia la ventana al estado inicial</value>
+  </data>
+  <data name="msgBtnGuardar" xml:space="preserve">
+    <value>Guarda el registro recién ingresado de forma temporal (hasta cerrar la ventana)</value>
+  </data>
+  <data name="msgBtnGuardarTodo" xml:space="preserve">
+    <value>Guarda los registros en el archivo</value>
+  </data>
+  <data name="msgBtnNuevoHabilitar" xml:space="preserve">
+    <value>Habilta los campos para ingresar un nuevo registro</value>
+  </data>
+  <data name="msgBtnReiniciar" xml:space="preserve">
+    <value>Pone 'en cero' las estadísticas.</value>
+  </data>
+  <data name="msgCheckBoxHabBicicleta" xml:space="preserve">
+    <value>Habilita los campos para ingresar datos sobre el viaje en bicicleta (si lo hubo)</value>
+  </data>
+  <data name="msgComboMeses" xml:space="preserve">
+    <value>Meses de los registros del listado (para estadísticas mensuales o acumuladas)</value>
+  </data>
+  <data name="msgDetalleBicicleta" xml:space="preserve">
+    <value>Detalles adicionales del viaje en bicicleta</value>
+  </data>
+  <data name="msgEstadAcumulado" xml:space="preserve">
+    <value>Ver estadísticas desde cierto mes en adelante (elegir mes)</value>
+  </data>
+  <data name="msgEstadMensual" xml:space="preserve">
+    <value>Ver estadísticas por mes (elegir mes)</value>
+  </data>
+  <data name="msgEstadTotales" xml:space="preserve">
+    <value>Ver estadísticas totales (tomando todos los registros)</value>
+  </data>
+  <data name="msgFechaRegistro" xml:space="preserve">
+    <value>Fecha del registro</value>
+  </data>
+  <data name="msgHorarioEntrada" xml:space="preserve">
+    <value>Horario de entrada (hh:mm:ss)</value>
+  </data>
+  <data name="msgHoraSalida" xml:space="preserve">
+    <value>Horario de salida (hh:mm:ss)</value>
+  </data>
+  <data name="msgIdaBicicleta" xml:space="preserve">
+    <value>Duración del viaje de ida en bicicleta</value>
+  </data>
+  <data name="msgListViewRegistros" xml:space="preserve">
+    <value>Muestra el listado de los registros (por fecha)</value>
+  </data>
+  <data name="msgObservaciones" xml:space="preserve">
+    <value>Observaciones o detalles adicionales del registro</value>
+  </data>
+  <data name="msgTiempoDescanso" xml:space="preserve">
+    <value>Tiempo de duración del descanso (hh:mm:ss)</value>
+  </data>
+  <data name="msgVueltaBicicleta" xml:space="preserve">
+    <value>Duración del viaje de vuelta en bicicleta</value>
+  </data>
+  <data name="msgCheckInvalidarDescanso" xml:space="preserve">
+    <value>Invalida el tiempo de descanso (no lo tiene en cuenta para las estadísticas)</value>
+  </data>
+</root>

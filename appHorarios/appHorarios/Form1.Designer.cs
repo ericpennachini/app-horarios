@@ -35,6 +35,14 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxDetalleBicicleta = new System.Windows.Forms.TextBox();
+            this.dtpVueltaBicicleta = new System.Windows.Forms.DateTimePicker();
+            this.dtpIdaBicicleta = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dtpTiempoDescanso = new System.Windows.Forms.DateTimePicker();
             this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
@@ -49,6 +57,13 @@
             this.btnNuevoHabilitar = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbDetalleBicicleta = new System.Windows.Forms.TextBox();
+            this.tbVueltaBicicleta = new System.Windows.Forms.TextBox();
+            this.tbIdaBicicleta = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.tbHorasTrabajadasDescDetalle = new System.Windows.Forms.TextBox();
             this.tbHorasTrabajadasDetalle = new System.Windows.Forms.TextBox();
@@ -71,6 +86,10 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelAvgVueltaBicicleta = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.labelAvgIdaBicicleta = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.labelAvgHoraSalida = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.labelAvgHoraEntrada = new System.Windows.Forms.Label();
@@ -84,37 +103,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dtpIdaBicicleta = new System.Windows.Forms.DateTimePicker();
-            this.dtpVueltaBicicleta = new System.Windows.Forms.DateTimePicker();
-            this.textBoxDetalleBicicleta = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.tbIdaBicicleta = new System.Windows.Forms.TextBox();
-            this.tbVueltaBicicleta = new System.Windows.Forms.TextBox();
-            this.tbDetalleBicicleta = new System.Windows.Forms.TextBox();
-            this.labelAvgIdaBicicleta = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.labelAvgVueltaBicicleta = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabNuevo.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabListado.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tabEstadisticas.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -172,6 +173,8 @@
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            this.buttonGuardar.MouseEnter += new System.EventHandler(this.buttonGuardar_MouseEnter);
+            this.buttonGuardar.MouseLeave += new System.EventHandler(this.buttonGuardar_MouseLeave);
             // 
             // buttonCancelar
             // 
@@ -186,6 +189,8 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            this.buttonCancelar.MouseEnter += new System.EventHandler(this.buttonCancelar_MouseEnter);
+            this.buttonCancelar.MouseLeave += new System.EventHandler(this.buttonCancelar_MouseLeave);
             // 
             // panel1
             // 
@@ -210,6 +215,94 @@
             this.panel1.Size = new System.Drawing.Size(538, 335);
             this.panel1.TabIndex = 1;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
+            this.checkBox2.Location = new System.Drawing.Point(37, 186);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(106, 17);
+            this.checkBox2.TabIndex = 12;
+            this.checkBox2.Text = "Viaje en bicicleta";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBox2.MouseEnter += new System.EventHandler(this.checkBox2_MouseEnter);
+            this.checkBox2.MouseLeave += new System.EventHandler(this.checkBox2_MouseLeave);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.textBoxDetalleBicicleta);
+            this.groupBox4.Controls.Add(this.dtpVueltaBicicleta);
+            this.groupBox4.Controls.Add(this.dtpIdaBicicleta);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Enabled = false;
+            this.groupBox4.Location = new System.Drawing.Point(37, 210);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(452, 94);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Detalle";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(226, 32);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Detalle";
+            // 
+            // textBoxDetalleBicicleta
+            // 
+            this.textBoxDetalleBicicleta.Location = new System.Drawing.Point(229, 52);
+            this.textBoxDetalleBicicleta.Name = "textBoxDetalleBicicleta";
+            this.textBoxDetalleBicicleta.Size = new System.Drawing.Size(204, 20);
+            this.textBoxDetalleBicicleta.TabIndex = 4;
+            this.textBoxDetalleBicicleta.MouseEnter += new System.EventHandler(this.textBoxDetalleBicicleta_MouseEnter);
+            this.textBoxDetalleBicicleta.MouseLeave += new System.EventHandler(this.textBoxDetalleBicicleta_MouseLeave);
+            // 
+            // dtpVueltaBicicleta
+            // 
+            this.dtpVueltaBicicleta.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpVueltaBicicleta.Location = new System.Drawing.Point(87, 52);
+            this.dtpVueltaBicicleta.Name = "dtpVueltaBicicleta";
+            this.dtpVueltaBicicleta.Size = new System.Drawing.Size(122, 20);
+            this.dtpVueltaBicicleta.TabIndex = 3;
+            this.dtpVueltaBicicleta.Value = new System.DateTime(2017, 8, 4, 0, 0, 0, 0);
+            this.dtpVueltaBicicleta.MouseEnter += new System.EventHandler(this.dtpVueltaBicicleta_MouseEnter);
+            this.dtpVueltaBicicleta.MouseLeave += new System.EventHandler(this.dtpVueltaBicicleta_MouseLeave);
+            // 
+            // dtpIdaBicicleta
+            // 
+            this.dtpIdaBicicleta.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpIdaBicicleta.Location = new System.Drawing.Point(87, 26);
+            this.dtpIdaBicicleta.Name = "dtpIdaBicicleta";
+            this.dtpIdaBicicleta.Size = new System.Drawing.Size(122, 20);
+            this.dtpIdaBicicleta.TabIndex = 2;
+            this.dtpIdaBicicleta.Value = new System.DateTime(2017, 8, 4, 0, 0, 0, 0);
+            this.dtpIdaBicicleta.MouseEnter += new System.EventHandler(this.dtpIdaBicicleta_MouseEnter);
+            this.dtpIdaBicicleta.MouseLeave += new System.EventHandler(this.dtpIdaBicicleta_MouseLeave);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(17, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Vuelta";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Ida";
+            // 
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -222,6 +315,8 @@
             this.checkBox1.Text = "Invalidar";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.MouseEnter += new System.EventHandler(this.checkBox1_MouseEnter);
+            this.checkBox1.MouseLeave += new System.EventHandler(this.checkBox1_MouseLeave);
             // 
             // dtpTiempoDescanso
             // 
@@ -234,6 +329,8 @@
             this.dtpTiempoDescanso.Size = new System.Drawing.Size(218, 20);
             this.dtpTiempoDescanso.TabIndex = 4;
             this.dtpTiempoDescanso.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
+            this.dtpTiempoDescanso.MouseEnter += new System.EventHandler(this.dtpTiempoDescanso_MouseEnter);
+            this.dtpTiempoDescanso.MouseLeave += new System.EventHandler(this.dtpTiempoDescanso_MouseLeave);
             // 
             // dtpHoraSalida
             // 
@@ -246,6 +343,8 @@
             this.dtpHoraSalida.Size = new System.Drawing.Size(295, 20);
             this.dtpHoraSalida.TabIndex = 3;
             this.dtpHoraSalida.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
+            this.dtpHoraSalida.MouseEnter += new System.EventHandler(this.dtpHoraSalida_MouseEnter);
+            this.dtpHoraSalida.MouseLeave += new System.EventHandler(this.dtpHoraSalida_MouseLeave);
             // 
             // dtpHoraEntrada
             // 
@@ -258,6 +357,8 @@
             this.dtpHoraEntrada.Size = new System.Drawing.Size(295, 20);
             this.dtpHoraEntrada.TabIndex = 2;
             this.dtpHoraEntrada.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
+            this.dtpHoraEntrada.MouseEnter += new System.EventHandler(this.dtpHoraEntrada_MouseEnter);
+            this.dtpHoraEntrada.MouseLeave += new System.EventHandler(this.dtpHoraEntrada_MouseLeave);
             // 
             // textBoxComentarios
             // 
@@ -270,6 +371,8 @@
             this.textBoxComentarios.Name = "textBoxComentarios";
             this.textBoxComentarios.Size = new System.Drawing.Size(295, 58);
             this.textBoxComentarios.TabIndex = 5;
+            this.textBoxComentarios.MouseEnter += new System.EventHandler(this.textBoxComentarios_MouseEnter);
+            this.textBoxComentarios.MouseLeave += new System.EventHandler(this.textBoxComentarios_MouseLeave);
             // 
             // label1
             // 
@@ -291,6 +394,8 @@
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
             this.dtpFechaRegistro.Size = new System.Drawing.Size(295, 20);
             this.dtpFechaRegistro.TabIndex = 1;
+            this.dtpFechaRegistro.MouseEnter += new System.EventHandler(this.dtpFechaRegistro_MouseEnter);
+            this.dtpFechaRegistro.MouseLeave += new System.EventHandler(this.dtpFechaRegistro_MouseLeave);
             // 
             // labelHoraSalida
             // 
@@ -339,6 +444,8 @@
             this.btnNuevoHabilitar.Text = "Nuevo";
             this.btnNuevoHabilitar.UseVisualStyleBackColor = true;
             this.btnNuevoHabilitar.Click += new System.EventHandler(this.btnNuevoHabilitar_Click);
+            this.btnNuevoHabilitar.MouseEnter += new System.EventHandler(this.btnNuevoHabilitar_MouseEnter);
+            this.btnNuevoHabilitar.MouseLeave += new System.EventHandler(this.btnNuevoHabilitar_MouseLeave);
             // 
             // tabListado
             // 
@@ -375,6 +482,72 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tbDetalleBicicleta);
+            this.groupBox5.Controls.Add(this.tbVueltaBicicleta);
+            this.groupBox5.Controls.Add(this.tbIdaBicicleta);
+            this.groupBox5.Controls.Add(this.label18);
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Location = new System.Drawing.Point(9, 270);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(233, 114);
+            this.groupBox5.TabIndex = 22;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Viaje en bicicleta";
+            // 
+            // tbDetalleBicicleta
+            // 
+            this.tbDetalleBicicleta.Location = new System.Drawing.Point(10, 80);
+            this.tbDetalleBicicleta.Name = "tbDetalleBicicleta";
+            this.tbDetalleBicicleta.ReadOnly = true;
+            this.tbDetalleBicicleta.Size = new System.Drawing.Size(217, 20);
+            this.tbDetalleBicicleta.TabIndex = 5;
+            // 
+            // tbVueltaBicicleta
+            // 
+            this.tbVueltaBicicleta.Location = new System.Drawing.Point(127, 42);
+            this.tbVueltaBicicleta.Name = "tbVueltaBicicleta";
+            this.tbVueltaBicicleta.ReadOnly = true;
+            this.tbVueltaBicicleta.Size = new System.Drawing.Size(100, 20);
+            this.tbVueltaBicicleta.TabIndex = 4;
+            // 
+            // tbIdaBicicleta
+            // 
+            this.tbIdaBicicleta.Location = new System.Drawing.Point(10, 42);
+            this.tbIdaBicicleta.Name = "tbIdaBicicleta";
+            this.tbIdaBicicleta.ReadOnly = true;
+            this.tbIdaBicicleta.Size = new System.Drawing.Size(100, 20);
+            this.tbIdaBicicleta.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 65);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 13);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Detalle";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(124, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(37, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Vuelta";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(22, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Ida";
+            // 
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
@@ -387,6 +560,8 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // tbHorasTrabajadasDescDetalle
             // 
@@ -503,6 +678,8 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
+            this.listView1.MouseEnter += new System.EventHandler(this.listView1_MouseEnter);
+            this.listView1.MouseLeave += new System.EventHandler(this.listView1_MouseLeave);
             // 
             // tabEstadisticas
             // 
@@ -527,6 +704,8 @@
             this.comboBoxMeses.Name = "comboBoxMeses";
             this.comboBoxMeses.Size = new System.Drawing.Size(128, 21);
             this.comboBoxMeses.TabIndex = 6;
+            this.comboBoxMeses.MouseEnter += new System.EventHandler(this.comboBoxMeses_MouseEnter);
+            this.comboBoxMeses.MouseLeave += new System.EventHandler(this.comboBoxMeses_MouseLeave);
             // 
             // groupBox3
             // 
@@ -550,6 +729,8 @@
             this.radioButton3.Text = "Acumulado desde";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButton3.MouseEnter += new System.EventHandler(this.radioButton3_MouseEnter);
+            this.radioButton3.MouseLeave += new System.EventHandler(this.radioButton3_MouseLeave);
             // 
             // radioButton2
             // 
@@ -561,6 +742,8 @@
             this.radioButton2.Text = "Mensual";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton2.MouseEnter += new System.EventHandler(this.radioButton2_MouseEnter);
+            this.radioButton2.MouseLeave += new System.EventHandler(this.radioButton2_MouseLeave);
             // 
             // radioButton1
             // 
@@ -574,6 +757,8 @@
             this.radioButton1.Text = "Totales";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.MouseEnter += new System.EventHandler(this.radioButton1_MouseEnter);
+            this.radioButton1.MouseLeave += new System.EventHandler(this.radioButton1_MouseLeave);
             // 
             // button2
             // 
@@ -584,6 +769,8 @@
             this.button2.Text = "Reiniciar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // groupBox2
             // 
@@ -607,6 +794,46 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información";
+            // 
+            // labelAvgVueltaBicicleta
+            // 
+            this.labelAvgVueltaBicicleta.AutoSize = true;
+            this.labelAvgVueltaBicicleta.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgVueltaBicicleta.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgVueltaBicicleta.Location = new System.Drawing.Point(207, 346);
+            this.labelAvgVueltaBicicleta.Name = "labelAvgVueltaBicicleta";
+            this.labelAvgVueltaBicicleta.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgVueltaBicicleta.TabIndex = 20;
+            this.labelAvgVueltaBicicleta.Text = "--:--:--";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(209, 323);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(180, 13);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "Viaje de vuelta en bicicleta promedio";
+            // 
+            // labelAvgIdaBicicleta
+            // 
+            this.labelAvgIdaBicicleta.AutoSize = true;
+            this.labelAvgIdaBicicleta.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgIdaBicicleta.ForeColor = System.Drawing.Color.Gray;
+            this.labelAvgIdaBicicleta.Location = new System.Drawing.Point(6, 346);
+            this.labelAvgIdaBicicleta.Name = "labelAvgIdaBicicleta";
+            this.labelAvgIdaBicicleta.Size = new System.Drawing.Size(70, 25);
+            this.labelAvgIdaBicicleta.TabIndex = 18;
+            this.labelAvgIdaBicicleta.Text = "--:--:--";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(8, 323);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(165, 13);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "Viaje de ida en bicicleta promedio";
             // 
             // labelAvgHoraSalida
             // 
@@ -722,11 +949,14 @@
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
             this.toolStripProgressBar1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 510);
             this.statusStrip1.Name = "statusStrip1";
@@ -739,197 +969,17 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.toolStripProgressBar1.Visible = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.textBoxDetalleBicicleta);
-            this.groupBox4.Controls.Add(this.dtpVueltaBicicleta);
-            this.groupBox4.Controls.Add(this.dtpIdaBicicleta);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(37, 210);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(452, 94);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Detalle";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Ida";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 58);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 13);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Vuelta";
-            // 
-            // dtpIdaBicicleta
-            // 
-            this.dtpIdaBicicleta.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIdaBicicleta.Location = new System.Drawing.Point(87, 26);
-            this.dtpIdaBicicleta.Name = "dtpIdaBicicleta";
-            this.dtpIdaBicicleta.Size = new System.Drawing.Size(122, 20);
-            this.dtpIdaBicicleta.TabIndex = 2;
-            this.dtpIdaBicicleta.Value = new System.DateTime(2017, 8, 4, 0, 0, 0, 0);
-            // 
-            // dtpVueltaBicicleta
-            // 
-            this.dtpVueltaBicicleta.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpVueltaBicicleta.Location = new System.Drawing.Point(87, 52);
-            this.dtpVueltaBicicleta.Name = "dtpVueltaBicicleta";
-            this.dtpVueltaBicicleta.Size = new System.Drawing.Size(122, 20);
-            this.dtpVueltaBicicleta.TabIndex = 3;
-            this.dtpVueltaBicicleta.Value = new System.DateTime(2017, 8, 4, 0, 0, 0, 0);
-            // 
-            // textBoxDetalleBicicleta
-            // 
-            this.textBoxDetalleBicicleta.Location = new System.Drawing.Point(229, 52);
-            this.textBoxDetalleBicicleta.Name = "textBoxDetalleBicicleta";
-            this.textBoxDetalleBicicleta.Size = new System.Drawing.Size(204, 20);
-            this.textBoxDetalleBicicleta.TabIndex = 4;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(226, 32);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 13);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Detalle";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(37, 186);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(106, 17);
-            this.checkBox2.TabIndex = 12;
-            this.checkBox2.Text = "Viaje en bicicleta";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.tbDetalleBicicleta);
-            this.groupBox5.Controls.Add(this.tbVueltaBicicleta);
-            this.groupBox5.Controls.Add(this.tbIdaBicicleta);
-            this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Location = new System.Drawing.Point(9, 270);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(233, 114);
-            this.groupBox5.TabIndex = 22;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Viaje en bicicleta";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(22, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Ida";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(124, 26);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(37, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Vuelta";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 65);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 13);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Detalle";
-            // 
-            // tbIdaBicicleta
-            // 
-            this.tbIdaBicicleta.Location = new System.Drawing.Point(10, 42);
-            this.tbIdaBicicleta.Name = "tbIdaBicicleta";
-            this.tbIdaBicicleta.ReadOnly = true;
-            this.tbIdaBicicleta.Size = new System.Drawing.Size(100, 20);
-            this.tbIdaBicicleta.TabIndex = 3;
-            // 
-            // tbVueltaBicicleta
-            // 
-            this.tbVueltaBicicleta.Location = new System.Drawing.Point(127, 42);
-            this.tbVueltaBicicleta.Name = "tbVueltaBicicleta";
-            this.tbVueltaBicicleta.ReadOnly = true;
-            this.tbVueltaBicicleta.Size = new System.Drawing.Size(100, 20);
-            this.tbVueltaBicicleta.TabIndex = 4;
-            // 
-            // tbDetalleBicicleta
-            // 
-            this.tbDetalleBicicleta.Location = new System.Drawing.Point(10, 80);
-            this.tbDetalleBicicleta.Name = "tbDetalleBicicleta";
-            this.tbDetalleBicicleta.ReadOnly = true;
-            this.tbDetalleBicicleta.Size = new System.Drawing.Size(217, 20);
-            this.tbDetalleBicicleta.TabIndex = 5;
-            // 
-            // labelAvgIdaBicicleta
-            // 
-            this.labelAvgIdaBicicleta.AutoSize = true;
-            this.labelAvgIdaBicicleta.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAvgIdaBicicleta.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgIdaBicicleta.Location = new System.Drawing.Point(6, 346);
-            this.labelAvgIdaBicicleta.Name = "labelAvgIdaBicicleta";
-            this.labelAvgIdaBicicleta.Size = new System.Drawing.Size(70, 25);
-            this.labelAvgIdaBicicleta.TabIndex = 18;
-            this.labelAvgIdaBicicleta.Text = "--:--:--";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 323);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(165, 13);
-            this.label20.TabIndex = 17;
-            this.label20.Text = "Viaje de ida en bicicleta promedio";
-            // 
-            // labelAvgVueltaBicicleta
-            // 
-            this.labelAvgVueltaBicicleta.AutoSize = true;
-            this.labelAvgVueltaBicicleta.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAvgVueltaBicicleta.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgVueltaBicicleta.Location = new System.Drawing.Point(207, 346);
-            this.labelAvgVueltaBicicleta.Name = "labelAvgVueltaBicicleta";
-            this.labelAvgVueltaBicicleta.Size = new System.Drawing.Size(70, 25);
-            this.labelAvgVueltaBicicleta.TabIndex = 20;
-            this.labelAvgVueltaBicicleta.Text = "--:--:--";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(209, 323);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(180, 13);
-            this.label22.TabIndex = 19;
-            this.label22.Text = "Viaje de vuelta en bicicleta promedio";
             // 
             // Form1
             // 
@@ -952,9 +1002,13 @@
             this.tabNuevo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.tabListado.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.tabEstadisticas.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -962,10 +1016,6 @@
             this.groupBox2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1048,6 +1098,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label labelAvgIdaBicicleta;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
 

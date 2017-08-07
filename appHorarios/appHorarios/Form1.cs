@@ -353,5 +353,215 @@ namespace appHorarios
                 groupBox4.Enabled = false;
             }
         }
+
+        private void btnNuevoHabilitar_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgBtnNuevoHabilitar;
+        }
+
+        private void btnNuevoHabilitar_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void dtpFechaRegistro_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgFechaRegistro;
+        }
+
+        private void dtpFechaRegistro_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void dtpHoraEntrada_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgHorarioEntrada;
+        }
+
+        private void dtpHoraEntrada_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void dtpHoraSalida_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgHoraSalida;
+        }
+
+        private void dtpHoraSalida_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void dtpTiempoDescanso_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgTiempoDescanso;
+        }
+
+        private void dtpTiempoDescanso_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void checkBox1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgCheckInvalidarDescanso;
+        }
+
+        private void checkBox1_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void textBoxComentarios_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgObservaciones;
+        }
+
+        private void textBoxComentarios_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void checkBox2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgCheckBoxHabBicicleta;
+        }
+
+        private void checkBox2_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void dtpIdaBicicleta_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgIdaBicicleta;
+        }
+
+        private void dtpIdaBicicleta_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void dtpVueltaBicicleta_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgVueltaBicicleta;
+        }
+
+        private void dtpVueltaBicicleta_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void textBoxDetalleBicicleta_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgDetalleBicicleta;
+        }
+
+        private void textBoxDetalleBicicleta_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void buttonGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgBtnGuardar;
+        }
+
+        private void buttonGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void buttonCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgBtnCancelar;
+        }
+
+        private void buttonCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void listView1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgListViewRegistros;
+        }
+
+        private void listView1_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgBtnGuardarTodo;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void radioButton1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgEstadTotales;
+        }
+
+        private void radioButton1_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void radioButton2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgEstadMensual;
+        }
+
+        private void radioButton2_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void radioButton3_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgEstadAcumulado;
+        }
+
+        private void radioButton3_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void comboBoxMeses_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgComboMeses;
+        }
+
+        private void comboBoxMeses_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgBtnActualizar;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Resource1.msgBtnReiniciar;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "";
+        }
     }
 }
