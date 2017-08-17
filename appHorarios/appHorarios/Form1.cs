@@ -177,7 +177,7 @@ namespace appHorarios
             }
 
 
-            if (_archivoReg.ListaRegistros.Count > 0)
+            if (listaEnviar.Count > 0)
             {
                 TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorasTrabajadas);
                 labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString(@"hh\:mm\:ss");
@@ -309,6 +309,11 @@ namespace appHorarios
             labelAvgDescanso.Text = "--:--:--";
             labelAvgHoraEntrada.Text = "--:--:--";
             labelAvgHoraSalida.Text = "--:--:--";
+            labelAvgIdaBicicleta.Text = "--:--:--";
+            labelAvgVueltaBicicleta.Text = "--:--:--";
+            radioButton1.Checked = true;
+            comboBoxMeses.SelectedIndex = -1;
+            comboBoxMeses.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)

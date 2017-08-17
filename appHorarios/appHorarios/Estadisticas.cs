@@ -83,7 +83,7 @@ namespace appHorarios
                             acumulador.Add(r.IdaBicicleta);
                         }
                     }
-                    prom = acumulador.Average(ts => ts.Ticks);
+                    prom = (acumulador.Count > 0 ? acumulador.Average(ts => ts.Ticks) : 0);
                     promL = Convert.ToInt64(prom);
                     resultado = new TimeSpan(promL);
                     break;
@@ -96,7 +96,7 @@ namespace appHorarios
                             acumulador.Add(r.VueltaBicicleta);
                         }
                     }
-                    prom = acumulador.Average(ts => ts.Ticks);
+                    prom = (acumulador.Count > 0 ? acumulador.Average(ts => ts.Ticks) : 0);
                     promL = Convert.ToInt64(prom);
                     resultado = new TimeSpan(promL);
                     break;

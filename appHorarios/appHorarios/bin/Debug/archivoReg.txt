@@ -1,35 +1,44 @@
-13/06/2017;08:10:00;17:19:00;01:29:00;True;horario de entrada aproximado;00:00:00;00:47:00;
-14/06/2017;08:41:00;17:25:00;01:54:00;True;;00:00:00;00:00:00;
-15/06/2017;08:15:00;17:40:00;01:14:00;True;horario de entrada aproximado;00:00:00;00:00:00;
-16/06/2017;08:15:00;17:05:00;01:02:00;True;horario de entrada aproximado;00:00:00;00:00:00;
-19/06/2017;08:34:00;17:15:00;01:25:00;True;;00:00:00;00:00:00;
-21/06/2017;08:14:00;17:40:00;01:11:11;True;;00:00:00;00:00:00;
-22/06/2017;08:10:00;17:06:00;01:15:00;True;horario de entrada aproximado / descanso aproximado;00:00:00;00:00:00;no medido
-23/06/2017;08:35:00;17:32:00;02:11:03;True;;00:00:00;00:00:00;
-26/06/2017;08:14:00;17:10:00;01:24:36;True;horario de salida aproximado;00:00:00;00:00:00;
-27/06/2017;08:20:00;17:09:00;01:28:00;True;;00:00:00;00:00:00;
-28/06/2017;08:30:00;17:32:00;01:31:00;True;horario de entrada aproximado;00:00:00;00:00:00;
-29/06/2017;08:31:00;17:25:00;01:28:00;True;;00:48:00;00:00:00;ruta larga (por zanni - m. david)
-30/06/2017;08:10:00;17:40:00;01:38:00;True;horario de entrada aproximado;00:00:00;00:00:00;
-03/07/2017;08:23:00;17:35:00;02:03:00;True;dentro del descanso tuve que ir a casa a llevarle la llave a jessy;00:40:15;00:00:00;
-04/07/2017;08:34:00;17:30:00;02:18:00;True;descanso demasiado largo;00:00:00;00:00:00;
-05/07/2017;08:22:00;17:25:00;02:00:00;True;descanso demasiado largo / tiempo de descanso aproximado / horario de salida aproximado;00:00:00;00:00:00;
-06/07/2017;08:11:00;15:33:00;01:08:00;True;salida anticipada para ir a hacer trámite del carnet;00:00:00;00:00:00;
-07/07/2017;08:30:00;18:29:00;02:01:17;True;horario de entrada aproximado / descanso demasiado largo;00:00:00;00:00:00;
-10/07/2017;08:34:00;17:56:00;01:03:00;True;;00:00:00;00:00:00;
-12/07/2017;08:06:00;17:40:00;01:14:52;True;horario de salida aproximado;00:43:00;00:00:00;
-13/07/2017;08:05:00;17:07:00;01:00:00;True;tiempo de descanso aproximado;00:00:00;00:00:00;
-17/07/2017;08:10:00;17:24:00;02:29:00;True;horario de entrada aproximado / descanso demasiado largo;00:00:00;00:00:00;
-18/07/2017;08:05:00;17:15:00;01:40:00;True;horario de entrada aproximado / horario de salida aproximado;00:00:00;00:00:00;
-19/07/2017;08:37:00;17:12:00;00:00:00;True;no hubo descanso;00:00:00;00:00:00;
-20/07/2017;08:35:00;17:52:00;00:30:00;True;horario de entrada aproximado / horario de salida aproximado;00:00:00;00:00:00;
-21/07/2017;08:20:00;17:15:00;00:58:00;True;horario de entrada aproximado;00:00:00;00:00:00;
-24/07/2017;08:17:00;16:10:00;01:39:00;True;horario reducido por salida para trámite;00:00:00;00:00:00;
-25/07/2017;08:22:00;18:22:00;01:15:00;True;horario de descanso aproximado;00:00:00;00:00:00;no medido
-26/07/2017;08:34:00;17:26:00;01:22:53;True;;00:00:00;00:00:00;
-27/07/2017;08:13:00;17:59:00;01:17:53;True;;00:00:00;00:00:00;
-28/07/2017;12:32:00;18:40:00;00:00:00;False;Salida a charla de carnet de conducir;00:00:00;00:00:00;
-31/07/2017;08:50:00;17:40:00;01:25:44;True;horario de entrada aproximado;00:00:00;00:00:00;
-01/08/2017;08:38:00;17:32:00;01:12:28;True;;00:00:00;00:00:00;
-02/08/2017;08:36:00;18:06:00;01:02:05;True;;00:00:00;00:00:00;
-03/08/2017;08:50:00;17:55:00;01:16:00;True;entrada demasiado tarde;00:00:00;00:00:00;
+13/6/2017;08:10:00;17:19:00;01:29:00;True;horario de entrada aproximado;00:00:00;00:47:00;
+14/6/2017;08:41:00;17:25:00;01:54:00;True;;00:00:00;00:00:00;
+15/6/2017;08:15:00;17:40:00;01:14:00;True;horario de entrada aproximado;00:00:00;00:00:00;
+16/6/2017;08:15:00;17:05:00;01:02:00;True;horario de entrada aproximado;00:00:00;00:00:00;
+19/6/2017;08:34:00;17:15:00;01:25:00;True;;00:00:00;00:00:00;
+21/6/2017;08:14:00;17:40:00;01:11:11;True;;00:00:00;00:00:00;
+22/6/2017;08:10:00;17:06:00;01:15:00;True;horario de entrada aproximado / descanso aproximado;00:00:00;00:00:00;no medido
+23/6/2017;08:35:00;17:32:00;02:11:03;True;;00:00:00;00:00:00;
+26/6/2017;08:14:00;17:10:00;01:24:36;True;horario de salida aproximado;00:00:00;00:00:00;
+27/6/2017;08:20:00;17:09:00;01:28:00;True;;00:00:00;00:00:00;
+28/6/2017;08:30:00;17:32:00;01:31:00;True;horario de entrada aproximado;00:00:00;00:00:00;
+29/6/2017;08:31:00;17:25:00;01:28:00;True;;00:48:00;00:00:00;ruta larga (por zanni - m. david)
+30/6/2017;08:10:00;17:40:00;01:38:00;True;horario de entrada aproximado;00:00:00;00:00:00;
+3/7/2017;08:23:00;17:35:00;02:03:00;True;dentro del descanso tuve que ir a casa a llevarle la llave a jessy;00:40:15;00:00:00;
+4/7/2017;08:34:00;17:30:00;02:18:00;True;descanso demasiado largo;00:00:00;00:00:00;
+5/7/2017;08:22:00;17:25:00;02:00:00;True;descanso demasiado largo / tiempo de descanso aproximado / horario de salida aproximado;00:00:00;00:00:00;
+6/7/2017;08:11:00;15:33:00;01:08:00;True;salida anticipada para ir a hacer trámite del carnet;00:00:00;00:00:00;
+7/7/2017;08:30:00;18:29:00;02:01:17;True;horario de entrada aproximado / descanso demasiado largo;00:00:00;00:00:00;
+10/7/2017;08:34:00;17:56:00;01:03:00;True;;00:00:00;00:00:00;
+12/7/2017;08:06:00;17:40:00;01:14:52;True;horario de salida aproximado;00:43:00;00:00:00;
+13/7/2017;08:05:00;17:07:00;01:00:00;True;tiempo de descanso aproximado;00:00:00;00:00:00;
+17/7/2017;08:10:00;17:24:00;02:29:00;True;horario de entrada aproximado / descanso demasiado largo;00:00:00;00:00:00;
+18/7/2017;08:05:00;17:15:00;01:40:00;True;horario de entrada aproximado / horario de salida aproximado;00:00:00;00:00:00;
+19/7/2017;08:37:00;17:12:00;00:00:00;True;no hubo descanso;00:00:00;00:00:00;
+20/7/2017;08:35:00;17:52:00;00:30:00;True;horario de entrada aproximado / horario de salida aproximado;00:00:00;00:00:00;
+21/7/2017;08:20:00;17:15:00;00:58:00;True;horario de entrada aproximado;00:00:00;00:00:00;
+24/7/2017;08:17:00;16:10:00;01:39:00;True;horario reducido por salida para trámite;00:00:00;00:00:00;
+25/7/2017;08:22:00;18:22:00;01:15:00;True;horario de descanso aproximado;00:00:00;00:00:00;no medido
+26/7/2017;08:34:00;17:26:00;01:22:53;True;;00:00:00;00:00:00;
+27/7/2017;08:13:00;17:59:00;01:17:53;True;;00:00:00;00:00:00;
+28/7/2017;12:32:00;18:40:00;00:00:00;False;Salida a charla de carnet de conducir;00:00:00;00:00:00;
+31/7/2017;08:50:00;17:40:00;01:25:44;True;horario de entrada aproximado;00:00:00;00:00:00;
+1/8/2017;08:38:00;17:32:00;01:12:28;True;;00:00:00;00:00:00;
+2/8/2017;08:36:00;18:06:00;01:02:05;True;;00:00:00;00:00:00;
+3/8/2017;08:50:00;17:55:00;01:16:00;True;entrada demasiado tarde;00:00:00;00:00:00;
+4/8/2017;08:41:00;17:28:00;00:38:00;True;;00:44:32;00:55:00;vuelta aproximada
+7/8/2017;08:50:00;17:28:00;01:43:59;True;horario de entrada aproximado / entrada demasiado tarde / descanso demasiado largo;00:00:00;00:00:00;
+8/8/2017;08:20:00;17:35:00;01:47:41;True;demasiado largo el descanso;00:00:00;00:00:00;
+9/8/2017;08:35:00;17:13:00;01:39:10;True;horario de entrada aproximado;00:00:00;00:00:00;
+10/8/2017;08:18:00;17:43:00;00:30:00;True;tiempo de descanso aproximado;00:00:00;00:00:00;
+11/8/2017;08:14:00;17:38:00;01:31:28;True;;00:00:00;00:00:00;
+14/8/2017;08:45:00;18:32:00;01:18:00;True;horario de entrada aproximado;00:00:00;00:00:00;tiempos de bicicleta no medidos
+15/8/2017;08:11:00;12:11:00;00:00:00;False;;00:00:00;00:00:00;
+16/8/2017;08:30:00;18:08:00;01:21:00;True;;00:00:00;00:00:00;
