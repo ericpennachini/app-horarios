@@ -136,6 +136,13 @@ namespace appHorarios
                     }
                     break;
                 case 2:
+                    if (_nuevoRegEnCurso == true)
+                    {
+                        labelAlerta.Visible = true;
+                        _timerAlerta.Tick += new EventHandler(OnTimerTick);
+                        _timerAlerta.Start();
+                        tabControl1.SelectedIndex = 0;
+                    }
                     break;
             }
         }
@@ -179,19 +186,19 @@ namespace appHorarios
 
             if (listaEnviar.Count > 0)
             {
-                TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorasTrabajadas);
+                TimeSpan mostrarHorasTrabAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.HorasTrabajadas);
                 labelAvgHoras1.Text = mostrarHorasTrabAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorasTrabajadasConDescanso);
+                TimeSpan mostrarHoraTrabDescAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.HorasTrabajadasConDescanso);
                 labelAvgHoras2.Text = mostrarHoraTrabDescAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarTiempoDescAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.TiempoDeDescanso);
+                TimeSpan mostrarTiempoDescAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.TiempoDeDescanso);
                 labelAvgDescanso.Text = mostrarTiempoDescAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarHoraEntradaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorarioDeEntrada);
+                TimeSpan mostrarHoraEntradaAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.HorarioDeEntrada);
                 labelAvgHoraEntrada.Text = mostrarHoraEntradaAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarHoraSalidaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.HorarioDeSalida);
+                TimeSpan mostrarHoraSalidaAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.HorarioDeSalida);
                 labelAvgHoraSalida.Text = mostrarHoraSalidaAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarIdaBicicletaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.TiempoIdaBicicleta);
+                TimeSpan mostrarIdaBicicletaAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.TiempoIdaBicicleta);
                 labelAvgIdaBicicleta.Text = mostrarIdaBicicletaAvg.ToString(@"hh\:mm\:ss");
-                TimeSpan mostrarVueltaBicicletaAvg = Estadisticas.CalcularPromedio(listaEnviar, Promedios.TiempoVueltaBicicleta);
+                TimeSpan mostrarVueltaBicicletaAvg = Estadisticas.CalcularPromedio(listaEnviar, ModoCalculo.TiempoVueltaBicicleta);
                 labelAvgVueltaBicicleta.Text = mostrarVueltaBicicletaAvg.ToString(@"hh\:mm\:ss");
             }
             else

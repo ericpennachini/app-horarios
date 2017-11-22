@@ -86,6 +86,18 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblFecMayorSalida = new System.Windows.Forms.Label();
+            this.lblMayorSalida = new System.Windows.Forms.Label();
+            this.lblFecMenorSalida = new System.Windows.Forms.Label();
+            this.lblMenorSalida = new System.Windows.Forms.Label();
+            this.lblFecMayorEntrada = new System.Windows.Forms.Label();
+            this.lblMayorEntrada = new System.Windows.Forms.Label();
+            this.lblFecMenorEntrada = new System.Windows.Forms.Label();
+            this.lblMenorEntrada = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.labelAvgVueltaBicicleta = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.labelAvgIdaBicicleta = new System.Windows.Forms.Label();
@@ -95,7 +107,7 @@
             this.labelAvgHoraEntrada = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelAvgDescanso = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.labelAvgHoras2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelAvgHoras1 = new System.Windows.Forms.Label();
@@ -128,7 +140,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(558, 479);
+            this.tabControl1.Size = new System.Drawing.Size(558, 521);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -142,7 +154,7 @@
             this.tabNuevo.Location = new System.Drawing.Point(4, 22);
             this.tabNuevo.Name = "tabNuevo";
             this.tabNuevo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNuevo.Size = new System.Drawing.Size(550, 453);
+            this.tabNuevo.Size = new System.Drawing.Size(550, 495);
             this.tabNuevo.TabIndex = 0;
             this.tabNuevo.Text = "Nuevo registro";
             this.tabNuevo.UseVisualStyleBackColor = true;
@@ -166,7 +178,7 @@
             this.buttonGuardar.Enabled = false;
             this.buttonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.Image")));
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardar.Location = new System.Drawing.Point(298, 400);
+            this.buttonGuardar.Location = new System.Drawing.Point(298, 442);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(120, 47);
             this.buttonGuardar.TabIndex = 6;
@@ -182,7 +194,7 @@
             this.buttonCancelar.Enabled = false;
             this.buttonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancelar.Image")));
             this.buttonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancelar.Location = new System.Drawing.Point(424, 400);
+            this.buttonCancelar.Location = new System.Drawing.Point(424, 442);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(120, 47);
             this.buttonCancelar.TabIndex = 7;
@@ -212,14 +224,14 @@
             this.panel1.Controls.Add(this.labelFecha);
             this.panel1.Location = new System.Drawing.Point(6, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(538, 335);
+            this.panel1.Size = new System.Drawing.Size(538, 377);
             this.panel1.TabIndex = 1;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(37, 186);
+            this.checkBox2.Location = new System.Drawing.Point(37, 239);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(106, 17);
             this.checkBox2.TabIndex = 12;
@@ -238,9 +250,9 @@
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(37, 210);
+            this.groupBox4.Location = new System.Drawing.Point(37, 263);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(452, 94);
+            this.groupBox4.Size = new System.Drawing.Size(463, 94);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalle";
@@ -258,7 +270,7 @@
             // 
             this.textBoxDetalleBicicleta.Location = new System.Drawing.Point(229, 52);
             this.textBoxDetalleBicicleta.Name = "textBoxDetalleBicicleta";
-            this.textBoxDetalleBicicleta.Size = new System.Drawing.Size(204, 20);
+            this.textBoxDetalleBicicleta.Size = new System.Drawing.Size(223, 20);
             this.textBoxDetalleBicicleta.TabIndex = 4;
             this.textBoxDetalleBicicleta.MouseEnter += new System.EventHandler(this.textBoxDetalleBicicleta_MouseEnter);
             this.textBoxDetalleBicicleta.MouseLeave += new System.EventHandler(this.textBoxDetalleBicicleta_MouseLeave);
@@ -308,7 +320,7 @@
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(423, 119);
+            this.checkBox1.Location = new System.Drawing.Point(434, 119);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(66, 17);
             this.checkBox1.TabIndex = 10;
@@ -340,7 +352,7 @@
             this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHoraSalida.Location = new System.Drawing.Point(194, 91);
             this.dtpHoraSalida.Name = "dtpHoraSalida";
-            this.dtpHoraSalida.Size = new System.Drawing.Size(295, 20);
+            this.dtpHoraSalida.Size = new System.Drawing.Size(306, 20);
             this.dtpHoraSalida.TabIndex = 3;
             this.dtpHoraSalida.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             this.dtpHoraSalida.MouseEnter += new System.EventHandler(this.dtpHoraSalida_MouseEnter);
@@ -354,7 +366,7 @@
             this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHoraEntrada.Location = new System.Drawing.Point(194, 65);
             this.dtpHoraEntrada.Name = "dtpHoraEntrada";
-            this.dtpHoraEntrada.Size = new System.Drawing.Size(295, 20);
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(306, 20);
             this.dtpHoraEntrada.TabIndex = 2;
             this.dtpHoraEntrada.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             this.dtpHoraEntrada.MouseEnter += new System.EventHandler(this.dtpHoraEntrada_MouseEnter);
@@ -366,10 +378,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxComentarios.Enabled = false;
-            this.textBoxComentarios.Location = new System.Drawing.Point(194, 146);
+            this.textBoxComentarios.Location = new System.Drawing.Point(35, 170);
             this.textBoxComentarios.Multiline = true;
             this.textBoxComentarios.Name = "textBoxComentarios";
-            this.textBoxComentarios.Size = new System.Drawing.Size(295, 58);
+            this.textBoxComentarios.Size = new System.Drawing.Size(465, 42);
             this.textBoxComentarios.TabIndex = 5;
             this.textBoxComentarios.MouseEnter += new System.EventHandler(this.textBoxComentarios_MouseEnter);
             this.textBoxComentarios.MouseLeave += new System.EventHandler(this.textBoxComentarios_MouseLeave);
@@ -392,7 +404,7 @@
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRegistro.Location = new System.Drawing.Point(194, 27);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(295, 20);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(306, 20);
             this.dtpFechaRegistro.TabIndex = 1;
             this.dtpFechaRegistro.MouseEnter += new System.EventHandler(this.dtpFechaRegistro_MouseEnter);
             this.dtpFechaRegistro.MouseLeave += new System.EventHandler(this.dtpFechaRegistro_MouseLeave);
@@ -455,7 +467,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(550, 453);
+            this.tabListado.Size = new System.Drawing.Size(550, 495);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Ver registros";
             // 
@@ -477,7 +489,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(296, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 441);
+            this.groupBox1.Size = new System.Drawing.Size(248, 483);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
@@ -552,7 +564,7 @@
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(141, 410);
+            this.button3.Location = new System.Drawing.Point(141, 452);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 25);
             this.button3.TabIndex = 2;
@@ -673,7 +685,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView1.Size = new System.Drawing.Size(274, 441);
+            this.listView1.Size = new System.Drawing.Size(274, 483);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -690,7 +702,7 @@
             this.tabEstadisticas.Controls.Add(this.button1);
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.tabEstadisticas.Name = "tabEstadisticas";
-            this.tabEstadisticas.Size = new System.Drawing.Size(550, 453);
+            this.tabEstadisticas.Size = new System.Drawing.Size(550, 495);
             this.tabEstadisticas.TabIndex = 2;
             this.tabEstadisticas.Text = "Estadísticas";
             this.tabEstadisticas.UseVisualStyleBackColor = true;
@@ -762,7 +774,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(409, 198);
+            this.button2.Location = new System.Drawing.Point(409, 189);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 30);
             this.button2.TabIndex = 4;
@@ -774,6 +786,18 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblFecMayorSalida);
+            this.groupBox2.Controls.Add(this.lblMayorSalida);
+            this.groupBox2.Controls.Add(this.lblFecMenorSalida);
+            this.groupBox2.Controls.Add(this.lblMenorSalida);
+            this.groupBox2.Controls.Add(this.lblFecMayorEntrada);
+            this.groupBox2.Controls.Add(this.lblMayorEntrada);
+            this.groupBox2.Controls.Add(this.lblFecMenorEntrada);
+            this.groupBox2.Controls.Add(this.lblMenorEntrada);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.labelAvgVueltaBicicleta);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.labelAvgIdaBicicleta);
@@ -783,24 +807,144 @@
             this.groupBox2.Controls.Add(this.labelAvgHoraEntrada);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.labelAvgDescanso);
-            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.labelAvgHoras2);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.labelAvgHoras1);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(3, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(400, 442);
+            this.groupBox2.Size = new System.Drawing.Size(400, 484);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información";
+            // 
+            // lblFecMayorSalida
+            // 
+            this.lblFecMayorSalida.AutoSize = true;
+            this.lblFecMayorSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecMayorSalida.Location = new System.Drawing.Point(164, 451);
+            this.lblFecMayorSalida.Name = "lblFecMayorSalida";
+            this.lblFecMayorSalida.Size = new System.Drawing.Size(11, 13);
+            this.lblFecMayorSalida.TabIndex = 32;
+            this.lblFecMayorSalida.Text = "-";
+            // 
+            // lblMayorSalida
+            // 
+            this.lblMayorSalida.AutoSize = true;
+            this.lblMayorSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMayorSalida.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblMayorSalida.Location = new System.Drawing.Point(164, 438);
+            this.lblMayorSalida.Name = "lblMayorSalida";
+            this.lblMayorSalida.Size = new System.Drawing.Size(11, 13);
+            this.lblMayorSalida.TabIndex = 31;
+            this.lblMayorSalida.Text = "-";
+            // 
+            // lblFecMenorSalida
+            // 
+            this.lblFecMenorSalida.AutoSize = true;
+            this.lblFecMenorSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecMenorSalida.Location = new System.Drawing.Point(12, 451);
+            this.lblFecMenorSalida.Name = "lblFecMenorSalida";
+            this.lblFecMenorSalida.Size = new System.Drawing.Size(11, 13);
+            this.lblFecMenorSalida.TabIndex = 30;
+            this.lblFecMenorSalida.Text = "-";
+            // 
+            // lblMenorSalida
+            // 
+            this.lblMenorSalida.AutoSize = true;
+            this.lblMenorSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenorSalida.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblMenorSalida.Location = new System.Drawing.Point(12, 438);
+            this.lblMenorSalida.Name = "lblMenorSalida";
+            this.lblMenorSalida.Size = new System.Drawing.Size(11, 13);
+            this.lblMenorSalida.TabIndex = 29;
+            this.lblMenorSalida.Text = "-";
+            // 
+            // lblFecMayorEntrada
+            // 
+            this.lblFecMayorEntrada.AutoSize = true;
+            this.lblFecMayorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecMayorEntrada.Location = new System.Drawing.Point(164, 389);
+            this.lblFecMayorEntrada.Name = "lblFecMayorEntrada";
+            this.lblFecMayorEntrada.Size = new System.Drawing.Size(11, 13);
+            this.lblFecMayorEntrada.TabIndex = 28;
+            this.lblFecMayorEntrada.Text = "-";
+            // 
+            // lblMayorEntrada
+            // 
+            this.lblMayorEntrada.AutoSize = true;
+            this.lblMayorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMayorEntrada.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblMayorEntrada.Location = new System.Drawing.Point(164, 376);
+            this.lblMayorEntrada.Name = "lblMayorEntrada";
+            this.lblMayorEntrada.Size = new System.Drawing.Size(11, 13);
+            this.lblMayorEntrada.TabIndex = 27;
+            this.lblMayorEntrada.Text = "-";
+            // 
+            // lblFecMenorEntrada
+            // 
+            this.lblFecMenorEntrada.AutoSize = true;
+            this.lblFecMenorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecMenorEntrada.Location = new System.Drawing.Point(12, 389);
+            this.lblFecMenorEntrada.Name = "lblFecMenorEntrada";
+            this.lblFecMenorEntrada.Size = new System.Drawing.Size(11, 13);
+            this.lblFecMenorEntrada.TabIndex = 26;
+            this.lblFecMenorEntrada.Text = "-";
+            // 
+            // lblMenorEntrada
+            // 
+            this.lblMenorEntrada.AutoSize = true;
+            this.lblMenorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenorEntrada.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblMenorEntrada.Location = new System.Drawing.Point(12, 376);
+            this.lblMenorEntrada.Name = "lblMenorEntrada";
+            this.lblMenorEntrada.Size = new System.Drawing.Size(11, 13);
+            this.lblMenorEntrada.TabIndex = 25;
+            this.lblMenorEntrada.Text = "-";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(150, 416);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(116, 13);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "Mayor horario de salida";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 416);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(117, 13);
+            this.label23.TabIndex = 23;
+            this.label23.Text = "Menor horario de salida";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(150, 355);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(125, 13);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "Mayor horario de entrada";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 355);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(126, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Menor horario de entrada";
             // 
             // labelAvgVueltaBicicleta
             // 
             this.labelAvgVueltaBicicleta.AutoSize = true;
             this.labelAvgVueltaBicicleta.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgVueltaBicicleta.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgVueltaBicicleta.Location = new System.Drawing.Point(207, 346);
+            this.labelAvgVueltaBicicleta.Location = new System.Drawing.Point(205, 283);
             this.labelAvgVueltaBicicleta.Name = "labelAvgVueltaBicicleta";
             this.labelAvgVueltaBicicleta.Size = new System.Drawing.Size(70, 25);
             this.labelAvgVueltaBicicleta.TabIndex = 20;
@@ -809,7 +953,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(209, 323);
+            this.label22.Location = new System.Drawing.Point(207, 270);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(180, 13);
             this.label22.TabIndex = 19;
@@ -820,7 +964,7 @@
             this.labelAvgIdaBicicleta.AutoSize = true;
             this.labelAvgIdaBicicleta.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgIdaBicicleta.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgIdaBicicleta.Location = new System.Drawing.Point(6, 346);
+            this.labelAvgIdaBicicleta.Location = new System.Drawing.Point(4, 283);
             this.labelAvgIdaBicicleta.Name = "labelAvgIdaBicicleta";
             this.labelAvgIdaBicicleta.Size = new System.Drawing.Size(70, 25);
             this.labelAvgIdaBicicleta.TabIndex = 18;
@@ -829,7 +973,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 323);
+            this.label20.Location = new System.Drawing.Point(6, 270);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(165, 13);
             this.label20.TabIndex = 17;
@@ -840,7 +984,7 @@
             this.labelAvgHoraSalida.AutoSize = true;
             this.labelAvgHoraSalida.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgHoraSalida.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgHoraSalida.Location = new System.Drawing.Point(207, 274);
+            this.labelAvgHoraSalida.Location = new System.Drawing.Point(205, 220);
             this.labelAvgHoraSalida.Name = "labelAvgHoraSalida";
             this.labelAvgHoraSalida.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoraSalida.TabIndex = 16;
@@ -850,7 +994,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(209, 251);
+            this.label13.Location = new System.Drawing.Point(207, 207);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 13);
             this.label13.TabIndex = 15;
@@ -861,7 +1005,7 @@
             this.labelAvgHoraEntrada.AutoSize = true;
             this.labelAvgHoraEntrada.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgHoraEntrada.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgHoraEntrada.Location = new System.Drawing.Point(6, 274);
+            this.labelAvgHoraEntrada.Location = new System.Drawing.Point(4, 220);
             this.labelAvgHoraEntrada.Name = "labelAvgHoraEntrada";
             this.labelAvgHoraEntrada.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoraEntrada.TabIndex = 14;
@@ -871,7 +1015,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 251);
+            this.label8.Location = new System.Drawing.Point(6, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(141, 13);
             this.label8.TabIndex = 13;
@@ -882,28 +1026,28 @@
             this.labelAvgDescanso.AutoSize = true;
             this.labelAvgDescanso.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgDescanso.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgDescanso.Location = new System.Drawing.Point(4, 202);
+            this.labelAvgDescanso.Location = new System.Drawing.Point(4, 162);
             this.labelAvgDescanso.Name = "labelAvgDescanso";
             this.labelAvgDescanso.Size = new System.Drawing.Size(70, 25);
             this.labelAvgDescanso.TabIndex = 12;
             this.labelAvgDescanso.Text = "--:--:--";
             this.labelAvgDescanso.TextChanged += new System.EventHandler(this.labelAvgDescanso_TextChanged);
             // 
-            // label11
+            // label19
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 179);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Tiempo de descanso promedio";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 149);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(152, 13);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "Tiempo de descanso promedio";
             // 
             // labelAvgHoras2
             // 
             this.labelAvgHoras2.AutoSize = true;
             this.labelAvgHoras2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgHoras2.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgHoras2.Location = new System.Drawing.Point(4, 129);
+            this.labelAvgHoras2.Location = new System.Drawing.Point(4, 104);
             this.labelAvgHoras2.Name = "labelAvgHoras2";
             this.labelAvgHoras2.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoras2.TabIndex = 10;
@@ -913,7 +1057,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 106);
+            this.label9.Location = new System.Drawing.Point(6, 91);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(268, 13);
             this.label9.TabIndex = 9;
@@ -924,7 +1068,7 @@
             this.labelAvgHoras1.AutoSize = true;
             this.labelAvgHoras1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvgHoras1.ForeColor = System.Drawing.Color.Gray;
-            this.labelAvgHoras1.Location = new System.Drawing.Point(6, 53);
+            this.labelAvgHoras1.Location = new System.Drawing.Point(4, 44);
             this.labelAvgHoras1.Name = "labelAvgHoras1";
             this.labelAvgHoras1.Size = new System.Drawing.Size(70, 25);
             this.labelAvgHoras1.TabIndex = 8;
@@ -942,7 +1086,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(409, 162);
+            this.button1.Location = new System.Drawing.Point(409, 153);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 30);
             this.button1.TabIndex = 2;
@@ -958,7 +1102,7 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripProgressBar1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 510);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 550);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(582, 22);
             this.statusStrip1.TabIndex = 1;
@@ -985,7 +1129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 532);
+            this.ClientSize = new System.Drawing.Size(582, 572);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1056,7 +1200,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelAvgDescanso;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelAvgHoras2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelAvgHoras1;
@@ -1099,6 +1242,19 @@
         private System.Windows.Forms.Label labelAvgIdaBicicleta;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblFecMenorEntrada;
+        private System.Windows.Forms.Label lblMenorEntrada;
+        private System.Windows.Forms.Label lblFecMayorEntrada;
+        private System.Windows.Forms.Label lblMayorEntrada;
+        private System.Windows.Forms.Label lblFecMayorSalida;
+        private System.Windows.Forms.Label lblMayorSalida;
+        private System.Windows.Forms.Label lblFecMenorSalida;
+        private System.Windows.Forms.Label lblMenorSalida;
     }
 }
 

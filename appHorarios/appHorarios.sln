@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appHorarios", "appHorarios\appHorarios.csproj", "{37B84296-1ADA-4C9D-976E-082FF84055C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appHorarios.app", "appHorarios.app\appHorarios.app.csproj", "{6C9E2DAF-A9E6-46CE-B536-5C6FC776F82E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appHorarios.LiveReg", "appHorarios.LiveReg\appHorarios.LiveReg.csproj", "{304A773C-31F2-46F9-A5D2-760D007BD614}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +43,14 @@ Global
 		{6C9E2DAF-A9E6-46CE-B536-5C6FC776F82E}.Release|x86.ActiveCfg = Release|x86
 		{6C9E2DAF-A9E6-46CE-B536-5C6FC776F82E}.Release|x86.Build.0 = Release|x86
 		{6C9E2DAF-A9E6-46CE-B536-5C6FC776F82E}.Release|x86.Deploy.0 = Release|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Debug|ARM.ActiveCfg = Debug|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Debug|x64.ActiveCfg = Debug|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Debug|x86.ActiveCfg = Debug|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Debug|x86.Build.0 = Debug|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Release|ARM.ActiveCfg = Release|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Release|x64.ActiveCfg = Release|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Release|x86.ActiveCfg = Release|x86
+		{304A773C-31F2-46F9-A5D2-760D007BD614}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

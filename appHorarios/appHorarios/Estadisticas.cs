@@ -9,7 +9,7 @@ namespace appHorarios
     {
         public Estadisticas() { }
 
-        public static TimeSpan CalcularPromedio(List<Registro> regs, Promedios p)
+        public static TimeSpan CalcularPromedio(List<Registro> regs, ModoCalculo p)
         {
             int t = (int)p;
             TimeSpan resultado = new TimeSpan();
@@ -100,6 +100,14 @@ namespace appHorarios
                     promL = Convert.ToInt64(prom);
                     resultado = new TimeSpan(promL);
                     break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9: 
+                    break;
+                case 10:
+                    break;
             }
 
             return resultado;
@@ -107,7 +115,7 @@ namespace appHorarios
 
     }
 
-    public enum Promedios
+    public enum ModoCalculo
     {
         HorasTrabajadas,
         HorasTrabajadasConDescanso,
@@ -115,6 +123,10 @@ namespace appHorarios
         HorarioDeEntrada,
         HorarioDeSalida,
         TiempoIdaBicicleta,
-        TiempoVueltaBicicleta
+        TiempoVueltaBicicleta,
+        MenorEntrada,
+        MayorEntrada,
+        MenorSalida,
+        MayorSalida
     }
 }
