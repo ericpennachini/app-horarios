@@ -14,6 +14,7 @@ namespace appHorarios.LiveReg
         public Form1()
         {
             InitializeComponent();
+            lblFechaActual.Text = DateTime.Now.ToString();
         }
     }
 }
