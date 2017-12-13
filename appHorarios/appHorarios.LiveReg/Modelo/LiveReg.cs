@@ -13,5 +13,14 @@ namespace appHorarios.LiveReg.Modelo
         public TimeSpan HoraFinDescanso { get; set; }
         public TimeSpan TiempoDescansoAcumulado { get; set; }
         public TimeSpan HoraSalida { get; set; }
+
+        public LiveRegType()
+        {
+            HoraEntrada = new TimeSpan(0, 0, 0);
+            HoraInicioDescanso = new TimeSpan(0, 0, 0);
+            HoraFinDescanso = new TimeSpan(0, 0, 0);
+            TiempoDescansoAcumulado = new TimeSpan(0, 0, 0);
+            HoraSalida = new TimeSpan(0, 0, 0);
+        }
     }
 }

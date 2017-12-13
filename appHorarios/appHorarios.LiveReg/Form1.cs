@@ -39,16 +39,22 @@ namespace appHorarios.LiveReg
 
         private void btnDescanso_Click(object sender, EventArgs e)
         {
-            if (_registro.HoraInicioDescanso == null && _registro.HoraFinDescanso == null)
+            if (_registro.HoraInicioDescanso == new TimeSpan(0, 0, 0))
             {
                 DateTime fechaHora = DateTime.Now;
                 _registro.HoraInicioDescanso = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
                 _registro.TiempoDescansoAcumulado = new TimeSpan(0, 0, 0);
-                label2.Text = _registro.HoraSalida.ToString(@"hh\:mm\:ss");
+                label2.Text = _registro.HoraInicioDescanso.ToString(@"hh\:mm\:ss");
             }
-            if (_registro.HoraFinDescanso == null)
+            else
             {
-
+                if (_registro.HoraFinDescanso == new TimeSpan(0, 0, 0))
+                {
+                    DateTime fechaHora = DateTime.Now;
+                    _registro.HoraFinDescanso = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
+                    _registro.TiempoDescansoAcumulado += _registro.HoraFinDescanso;
+                    label3.Text = _registro.HoraFinDescanso.ToString(@"hh\:mm\:ss");
+                }
             }
         }
     }

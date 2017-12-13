@@ -8,14 +8,44 @@ namespace appHorarios.LiveReg.Servicio
 {
     public class LiveRegService
     {
-        #region Campos 
-        private LiveRegType _registroLiveReg;
-        public LiveRegType RegistroLiveReg
+        #region Campos y propiedades
+        private List<LiveRegType> _listaLiveReg;
+        public List<LiveRegType> ListaLiveReg
         {
-            get { return _registroLiveReg; }
-            set { _registroLiveReg = value; }
+            get { return _listaLiveReg; }
+            set { _listaLiveReg = value; }
         }
+
+        private String _periodoCalculo;
+        public String PeriodoCalculo
+        {
+            get { return _periodoCalculo; }
+            set { _periodoCalculo = value; }
+        }
+
+        public static String CALCULO_MENSUAL = "M";
+        public static String CALCULO_SEMANAL = "S";
         #endregion
+
+        public LiveRegService()
+        {
+            _listaLiveReg = new List<LiveRegType>();
+        }
+
+        public void AgregarLiveReg(LiveRegType reg)
+        {
+            // agregar a archivo
+        }
+
+        public TimeSpan CalcularHorasACompensar(String tipo)
+        {
+            return new TimeSpan();
+        }
+
+        public TimeSpan CalcularTiempoDescansoCompensado(String tipo)
+        {
+            return new TimeSpan();
+        }
 
 
     }
