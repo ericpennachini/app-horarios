@@ -43,7 +43,7 @@ namespace appHorarios.LiveReg
             {
                 DateTime fechaHora = DateTime.Now;
                 _registro.HoraInicioDescanso = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
-                _registro.TiempoDescansoAcumulado = new TimeSpan(0, 0, 0);
+                // _registro.TiempoDescansoAcumulado = new TimeSpan(0, 0, 0);
                 label2.Text = _registro.HoraInicioDescanso.ToString(@"hh\:mm\:ss");
             }
             else
@@ -54,6 +54,11 @@ namespace appHorarios.LiveReg
                     _registro.HoraFinDescanso = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
                     _registro.TiempoDescansoAcumulado += _registro.HoraFinDescanso;
                     label3.Text = _registro.HoraFinDescanso.ToString(@"hh\:mm\:ss");
+                }
+                else
+                {
+                    tbxTotalDescanso.Text = _registro.TiempoDescansoAcumulado.ToString(@"hh\:mm\:ss");
+
                 }
             }
         }
