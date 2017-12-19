@@ -84,7 +84,7 @@ namespace appHorarios
                         + ";" + r.Observaciones
                         + ";" + r.IdaBicicleta.ToString()
                         + ";" + r.VueltaBicicleta.ToString()
-                        + ";" + r.DetalleBicicleta.ToString();
+                        + ";" + r.DetalleBicicleta;
                     archivo.WriteLine(linea);
                     if (barra != null)
                     {

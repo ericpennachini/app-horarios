@@ -18,6 +18,11 @@ namespace appHorarios.LiveReg.Servicio
             get { return _periodoCalculo; }
             set { _periodoCalculo = value; }
         }
+        public List<LiveRegType> ListaLiveReg
+        {
+            get { return _listaLiveReg; }
+            set { _listaLiveReg = value; }
+        }
 
         public static String CALCULO_MENSUAL = "M";
         public static String CALCULO_SEMANAL = "S";
@@ -29,7 +34,7 @@ namespace appHorarios.LiveReg.Servicio
             _archivoRegistros = new ArchivoRegistro();
         }
 
-        public void GuardarArchivoLiveReg(LiveRegType reg)
+        public void GuardarArchivoLiveReg()
         {
             // agregar a archivo los livereg
             // Adicionalmente, hay que convertir los LiveReg a Registro
@@ -43,11 +48,33 @@ namespace appHorarios.LiveReg.Servicio
                     HoraSalida = lrt.HoraSalida,
                     Observaciones = "",
                     TiempoDescanso = lrt.TiempoDescansoAcumulado,
-                    DescansoValido = true
+                    DescansoValido = true,
+                    DetalleBicicleta = ""
                 });
             }
+            _archivoRegistros.ListaRegistros.Clear();
             _archivoRegistros.ListaRegistros.AddRange(regs);
             _archivoRegistros.EscribirArchivo(null, true);
+        }
+
+        public void AbrirArchivoLiveReg()
+        {
+            _archivoRegistros.AbrirArchivo();
+            List<LiveRegType> regs = new List<LiveRegType>();
+            if (_archivoRegistros.ListaRegistros.Count > 0)
+            {
+                foreach (Registro r in _archivoRegistros.ListaRegistros)
+                {
+                    regs.Add(new LiveRegType
+                    {
+                        FechaRegistro = r.Fecha,
+                        HoraEntrada = r.HoraEntrada,
+                        HoraSalida = r.HoraSalida,
+                        TiempoDescansoAcumulado = r.TiempoDescanso
+                    });
+                }
+                _listaLiveReg.AddRange(regs);
+            }
         }
 
         public TimeSpan CalcularHorasACompensar(String tipo)
@@ -63,7 +90,7 @@ namespace appHorarios.LiveReg.Servicio
                     
                     foreach (LiveRegType lvr in listaFiltrada1)
                     {
-                        horasCompensar += (new TimeSpan(9, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        horasCompensar += (new TimeSpan(8, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
                     }
 
                     break;
@@ -78,7 +105,7 @@ namespace appHorarios.LiveReg.Servicio
                     
                     foreach (LiveRegType lvr in listaFiltrada2)
                     {
-                        horasCompensar += (new TimeSpan(9, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        horasCompensar += (new TimeSpan(8, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
                     }
                     break;
             }

@@ -11,18 +11,38 @@ using appHorarios.LiveReg.Servicio;
 
 namespace appHorarios.LiveReg
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
         private LiveRegType _registro;
         private LiveRegService _servicio;
+        private Timer _timerFechaHora;
 
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
             lblFechaActual.Text = DateTime.Now.ToString();
             _registro = new LiveRegType();
             _registro.FechaRegistro = DateTime.Now;
             _servicio = new LiveRegService();
+            _servicio.AbrirArchivoLiveReg();
+            LiveRegType ultimoIngreso = _servicio.ListaLiveReg.Last();
+            if (ultimoIngreso.FechaRegistro.DayOfYear == DateTime.Now.DayOfYear)
+            {
+                btnMarcarEntrada.Enabled = false;
+            }
+
+            comboBox1.SelectedItem = "Semanal";
+            _timerFechaHora = new Timer { Interval = 1000 };
+            _timerFechaHora.Tick += new EventHandler(OnTimerTick);
+            _timerFechaHora.Start();
+        }
+        private void OnTimerTick(Object sender, EventArgs e)
+        {
+            lblFechaActual.Text = DateTime.Now.ToString();
+            if (DateTime.Now.DayOfYear > _servicio.ListaLiveReg.Last().FechaRegistro.DayOfYear)
+            {
+                btnMarcarEntrada.Enabled = true;
+            }
         }
 
         private void ReiniciarCampos()
@@ -34,6 +54,7 @@ namespace appHorarios.LiveReg
             label3.Text = "--:--:--";
             label4.Text = "--:--:--";
             tbxTotalDescanso.Text = "";
+            tbxHorarioAproxSalida.Text = "";
         }
 
         private void btnMarcarEntrada_Click(object sender, EventArgs e)
@@ -42,6 +63,7 @@ namespace appHorarios.LiveReg
             DateTime fechaHora = DateTime.Now;
             _registro.HoraEntrada = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
             label1.Text = _registro.HoraEntrada.ToString(@"hh\:mm\:ss");
+            tbxHorarioAproxSalida.Text = GetHorarioSalidaAproximado();
             btnDescanso.Enabled = true;
             btnMarcarSalida.Enabled = true;
         }
@@ -68,22 +90,29 @@ namespace appHorarios.LiveReg
             lblHorascompensar.Text = horasACompensar.ToString(@"hh\:mm\:ss");
         }
 
+        private String GetHorarioSalidaAproximado()
+        {
+            String resultado = (_registro.HoraEntrada + _registro.TiempoDescansoAcumulado + new TimeSpan(9, 0, 0)).ToString(@"hh\:mm\:ss");
+            return resultado;
+        }
+
         private void btnMarcarSalida_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "Registro guardado");
             DateTime fechaHora = DateTime.Now;
             _registro.HoraSalida = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
             label4.Text = _registro.HoraSalida.ToString(@"hh\:mm\:ss");
-            // Cerrar el registro
-            // 1) Agregar a la lista; 2) Reiniciar campos; 3) Refrescar datos
             _servicio.ListaLiveReg.Add(_registro);
+
+            // Comprueba si el último registro es de la fecha de hoy,
+            // en este caso no deja ingresar otro registro. La idea es que los registros
+            // sean de dias diferentes.
+            if (_servicio.ListaLiveReg.Last().FechaRegistro.DayOfYear >= DateTime.Now.DayOfYear)
+            {
+                btnMarcarEntrada.Enabled = false;
+            }
             btnDescanso.Enabled = false;
             btnMarcarSalida.Enabled = false;
-            btnMarcarEntrada.Enabled = false;
-            label2.Text = "--:--:--";
-            label3.Text = "--:--:--";
 
-            // actualizar datos
             RefrescarDatos();
         }
 
@@ -105,6 +134,7 @@ namespace appHorarios.LiveReg
                     _registro.TiempoDescansoAcumulado += (_registro.HoraFinUltimoDescanso - _registro.HoraInicioUltimoDescanso);
                     label3.Text = _registro.HoraFinUltimoDescanso.ToString(@"hh\:mm\:ss");
                     tbxTotalDescanso.Text = _registro.TiempoDescansoAcumulado.ToString(@"hh\:mm\:ss");
+                    tbxHorarioAproxSalida.Text = GetHorarioSalidaAproximado();
                     btnDescanso.Text = "Reiniciar";
                 }
                 else
@@ -125,6 +155,27 @@ namespace appHorarios.LiveReg
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefrescarDatos();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_registro.HoraSalida == new TimeSpan(0, 0, 0))
+            {
+                //MessageBox.Show(this, "El registro actual está sin terminar \nTodos los datos de esta sesión no se guardarán", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (_registro.HoraEntrada != new TimeSpan(0, 0, 0))
+                {
+                    DateTime fechaHora = DateTime.Now;
+                    _registro.HoraSalida = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
+                    label4.Text = _registro.HoraSalida.ToString(@"hh\:mm\:ss");
+                    _servicio.ListaLiveReg.Add(_registro);
+                    _servicio.GuardarArchivoLiveReg();
+                }
+            }
+            else
+            {
+                _servicio.GuardarArchivoLiveReg();
+            }
+            _timerFechaHora.Stop(); 
         }
     }
 }
