@@ -83,10 +83,10 @@ namespace appHorarios.LiveReg.Servicio
             switch (tipo)
             {
                 case "M":
-                    var datos1 = from lr in _listaLiveReg
+                    var datosM = from lr in _listaLiveReg
                                 where lr.FechaRegistro.Month == DateTime.Now.Month
                                 select lr;
-                    List<LiveRegType> listaFiltrada1 = new List<LiveRegType>(datos1);
+                    List<LiveRegType> listaFiltrada1 = new List<LiveRegType>(datosM);
                     
                     foreach (LiveRegType lvr in listaFiltrada1)
                     {
@@ -96,12 +96,12 @@ namespace appHorarios.LiveReg.Servicio
                     break;
                 case "S":
                     Calendar c = (new DateTimeFormatInfo()).Calendar;
-                    var datos2 = from lr in _listaLiveReg
+                    var datosS = from lr in _listaLiveReg
                                 //where lr.FechaRegistro == DateTime.Now.Month
                                 where c.GetWeekOfYear(lr.FechaRegistro, CalendarWeekRule.FirstFullWeek, DayOfWeek.Sunday)
                                     == c.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstFullWeek, DayOfWeek.Sunday)
                                 select lr;
-                    List<LiveRegType> listaFiltrada2 = new List<LiveRegType>(datos2);
+                    List<LiveRegType> listaFiltrada2 = new List<LiveRegType>(datosS);
                     
                     foreach (LiveRegType lvr in listaFiltrada2)
                     {

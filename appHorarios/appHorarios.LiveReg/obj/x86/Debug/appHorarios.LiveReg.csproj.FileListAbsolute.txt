@@ -12,8 +12,8 @@ D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\bin\Debug\appHorari
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\bin\Debug\appHorarios.exe
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\bin\Debug\appHorarios.pdb
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.csprojResolveAssemblyReference.cache
+D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.Form2.resources
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.Properties.Resources.resources
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.csproj.GenerateResource.Cache
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.exe
 D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.pdb
-D:\app horarios\app-horarios\appHorarios\appHorarios.LiveReg\obj\x86\Debug\appHorarios.LiveReg.Form2.resources

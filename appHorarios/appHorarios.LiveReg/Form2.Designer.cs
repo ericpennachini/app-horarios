@@ -43,8 +43,6 @@
             this.tbxHorarioAproxSalida = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblTiempoDescansoCompensado = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblHorascompensar = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -200,42 +198,24 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblTiempoDescansoCompensado);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.lblHorascompensar);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 197);
+            this.groupBox2.Location = new System.Drawing.Point(12, 191);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(515, 172);
+            this.groupBox2.Size = new System.Drawing.Size(515, 81);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultados";
-            // 
-            // lblTiempoDescansoCompensado
-            // 
-            this.lblTiempoDescansoCompensado.AutoSize = true;
-            this.lblTiempoDescansoCompensado.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoDescansoCompensado.Location = new System.Drawing.Point(142, 100);
-            this.lblTiempoDescansoCompensado.Name = "lblTiempoDescansoCompensado";
-            this.lblTiempoDescansoCompensado.Size = new System.Drawing.Size(81, 19);
-            this.lblTiempoDescansoCompensado.TabIndex = 6;
-            this.lblTiempoDescansoCompensado.Text = "--:--:--";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(143, 78);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(170, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Tiempo de descanso compensado";
             // 
             // lblHorascompensar
             // 
             this.lblHorascompensar.AutoSize = true;
             this.lblHorascompensar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorascompensar.Location = new System.Drawing.Point(19, 100);
+            this.lblHorascompensar.Location = new System.Drawing.Point(297, 18);
             this.lblHorascompensar.Name = "lblHorascompensar";
             this.lblHorascompensar.Size = new System.Drawing.Size(81, 19);
             this.lblHorascompensar.TabIndex = 2;
@@ -244,7 +224,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 78);
+            this.label5.Location = new System.Drawing.Point(190, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 1;
@@ -266,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 381);
+            this.ClientSize = new System.Drawing.Size(539, 284);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblFechaActual);
@@ -304,8 +284,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblHorascompensar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTiempoDescansoCompensado;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbxTotalDescanso;
         private System.Windows.Forms.Label label10;
     }

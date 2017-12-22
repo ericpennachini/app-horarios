@@ -39,10 +39,10 @@ namespace appHorarios.LiveReg
         private void OnTimerTick(Object sender, EventArgs e)
         {
             lblFechaActual.Text = DateTime.Now.ToString();
-            if (DateTime.Now.DayOfYear > _servicio.ListaLiveReg.Last().FechaRegistro.DayOfYear)
-            {
-                btnMarcarEntrada.Enabled = true;
-            }
+            //if (DateTime.Now.DayOfYear > _servicio.ListaLiveReg.Last().FechaRegistro.DayOfYear)
+            //{
+            //    btnMarcarEntrada.Enabled = true;
+            //}
         }
 
         private void ReiniciarCampos()
@@ -63,7 +63,8 @@ namespace appHorarios.LiveReg
             DateTime fechaHora = DateTime.Now;
             _registro.HoraEntrada = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
             label1.Text = _registro.HoraEntrada.ToString(@"hh\:mm\:ss");
-            tbxHorarioAproxSalida.Text = GetHorarioSalidaAproximado();
+            //tbxHorarioAproxSalida.Text = GetHorarioSalidaAproximado();
+            btnMarcarEntrada.Enabled = false;
             btnDescanso.Enabled = true;
             btnMarcarSalida.Enabled = true;
         }
@@ -92,7 +93,10 @@ namespace appHorarios.LiveReg
 
         private String GetHorarioSalidaAproximado()
         {
-            String resultado = (_registro.HoraEntrada + _registro.TiempoDescansoAcumulado + new TimeSpan(9, 0, 0)).ToString(@"hh\:mm\:ss");
+            String resultado = (
+                _registro.HoraEntrada + 
+                _registro.TiempoDescansoAcumulado + 
+                new TimeSpan(9, 0, 0)).ToString(@"hh\:mm\:ss");
             return resultado;
         }
 
