@@ -46,6 +46,8 @@
             this.lblHorascompensar = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblHorarioSalidaComp = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -201,6 +203,8 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.lblHorarioSalidaComp);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.lblHorascompensar);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.comboBox1);
@@ -215,7 +219,7 @@
             // 
             this.lblHorascompensar.AutoSize = true;
             this.lblHorascompensar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorascompensar.Location = new System.Drawing.Point(297, 18);
+            this.lblHorascompensar.Location = new System.Drawing.Point(346, 18);
             this.lblHorascompensar.Name = "lblHorascompensar";
             this.lblHorascompensar.Size = new System.Drawing.Size(81, 19);
             this.lblHorascompensar.TabIndex = 2;
@@ -224,7 +228,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(190, 22);
+            this.label5.Location = new System.Drawing.Point(239, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 1;
@@ -241,6 +245,27 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label6.Location = new System.Drawing.Point(188, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Horario de salida compensado";
+            // 
+            // lblHorarioSalidaComp
+            // 
+            this.lblHorarioSalidaComp.AutoSize = true;
+            this.lblHorarioSalidaComp.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorarioSalidaComp.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblHorarioSalidaComp.Location = new System.Drawing.Point(346, 42);
+            this.lblHorarioSalidaComp.Name = "lblHorarioSalidaComp";
+            this.lblHorarioSalidaComp.Size = new System.Drawing.Size(81, 19);
+            this.lblHorarioSalidaComp.TabIndex = 4;
+            this.lblHorarioSalidaComp.Text = "--:--:--";
             // 
             // Form2
             // 
@@ -286,6 +311,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbxTotalDescanso;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblHorarioSalidaComp;
+        private System.Windows.Forms.Label label6;
     }
 }
 

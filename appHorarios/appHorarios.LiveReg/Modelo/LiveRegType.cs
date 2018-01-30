@@ -12,7 +12,6 @@ namespace appHorarios.LiveReg.Modelo
         public TimeSpan HoraInicioUltimoDescanso { get; set; }
         public TimeSpan HoraFinUltimoDescanso { get; set; }
         public TimeSpan TiempoDescansoAcumulado { get; set; }
-        public TimeSpan PausaDescansoAcumulada { get; set; }
         public TimeSpan HoraSalida { get; set; }
 
         public LiveRegType()
@@ -21,7 +20,6 @@ namespace appHorarios.LiveReg.Modelo
             HoraInicioUltimoDescanso = new TimeSpan(0, 0, 0);
             HoraFinUltimoDescanso = new TimeSpan(0, 0, 0);
             TiempoDescansoAcumulado = new TimeSpan(0, 0, 0);
-            PausaDescansoAcumulada = new TimeSpan(0, 0, 0);
             HoraSalida = new TimeSpan(0, 0, 0);
         }
     }

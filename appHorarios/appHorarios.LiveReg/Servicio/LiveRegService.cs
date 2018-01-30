@@ -97,7 +97,6 @@ namespace appHorarios.LiveReg.Servicio
                 case "S":
                     Calendar c = (new DateTimeFormatInfo()).Calendar;
                     var datosS = from lr in _listaLiveReg
-                                //where lr.FechaRegistro == DateTime.Now.Month
                                 where c.GetWeekOfYear(lr.FechaRegistro, CalendarWeekRule.FirstFullWeek, DayOfWeek.Sunday)
                                     == c.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstFullWeek, DayOfWeek.Sunday)
                                 select lr;
@@ -105,16 +104,18 @@ namespace appHorarios.LiveReg.Servicio
                     
                     foreach (LiveRegType lvr in listaFiltrada2)
                     {
-                        horasCompensar += (new TimeSpan(8, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        TimeSpan res = (new TimeSpan(8, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        horasCompensar += res;
                     }
                     break;
             }
             return horasCompensar;
         }
 
-        public TimeSpan CalcularTiempoDescansoCompensado(String tipo)
+        public TimeSpan CalcularHorarioSalidaCompensado(TimeSpan comp, TimeSpan horaEntrada)
         {
-            return new TimeSpan();
+            TimeSpan ret = horaEntrada + new TimeSpan(9, 0, 0) - comp;
+            return ret;
         }
 
 

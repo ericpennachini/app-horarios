@@ -39,10 +39,6 @@ namespace appHorarios.LiveReg
         private void OnTimerTick(Object sender, EventArgs e)
         {
             lblFechaActual.Text = DateTime.Now.ToString();
-            //if (DateTime.Now.DayOfYear > _servicio.ListaLiveReg.Last().FechaRegistro.DayOfYear)
-            //{
-            //    btnMarcarEntrada.Enabled = true;
-            //}
         }
 
         private void ReiniciarCampos()
@@ -63,10 +59,12 @@ namespace appHorarios.LiveReg
             DateTime fechaHora = DateTime.Now;
             _registro.HoraEntrada = new TimeSpan(fechaHora.Hour, fechaHora.Minute, fechaHora.Second);
             label1.Text = _registro.HoraEntrada.ToString(@"hh\:mm\:ss");
-            //tbxHorarioAproxSalida.Text = GetHorarioSalidaAproximado();
+            // tbxHorarioAproxSalida.Text = GetHorarioSalidaAproximado();
             btnMarcarEntrada.Enabled = false;
             btnDescanso.Enabled = true;
             btnMarcarSalida.Enabled = true;
+
+            RefrescarDatos();
         }
 
         private void RefrescarDatos()
@@ -88,7 +86,9 @@ namespace appHorarios.LiveReg
                     horasACompensar = _servicio.CalcularHorasACompensar(LiveRegService.CALCULO_SEMANAL);
                 }
             }
-            lblHorascompensar.Text = horasACompensar.ToString(@"hh\:mm\:ss");
+            lblHorascompensar.Text = horasACompensar.ToString();
+            TimeSpan salidaComp = _servicio.CalcularHorarioSalidaCompensado(horasACompensar, _registro.HoraEntrada);
+            lblHorarioSalidaComp.Text = salidaComp.ToString();
         }
 
         private String GetHorarioSalidaAproximado()
@@ -96,9 +96,11 @@ namespace appHorarios.LiveReg
             String resultado = (
                 _registro.HoraEntrada + 
                 _registro.TiempoDescansoAcumulado + 
-                new TimeSpan(9, 0, 0)).ToString(@"hh\:mm\:ss");
+                new TimeSpan(8, 0, 0)).ToString(@"hh\:mm\:ss");
             return resultado;
         }
+
+        
 
         private void btnMarcarSalida_Click(object sender, EventArgs e)
         {
