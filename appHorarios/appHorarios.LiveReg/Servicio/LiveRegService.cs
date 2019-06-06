@@ -80,17 +80,19 @@ namespace appHorarios.LiveReg.Servicio
         public TimeSpan CalcularHorasACompensar(String tipo)
         {
             TimeSpan horasCompensar = new TimeSpan(0, 0, 0);
+            // descanso máximo por día: 12 minutos
             switch (tipo)
             {
                 case "M":
                     var datosM = from lr in _listaLiveReg
-                                where lr.FechaRegistro.Month == DateTime.Now.Month
+                                where (lr.FechaRegistro.Month == DateTime.Now.Month && lr.FechaRegistro.Year == DateTime.Now.Year)
                                 select lr;
                     List<LiveRegType> listaFiltrada1 = new List<LiveRegType>(datosM);
                     
                     foreach (LiveRegType lvr in listaFiltrada1)
                     {
-                        horasCompensar += (new TimeSpan(8, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        // horasCompensar += (new TimeSpan(8, 48, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        horasCompensar += (new TimeSpan(9, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada); // sin pausa acumulada
                     }
 
                     break;
@@ -104,7 +106,8 @@ namespace appHorarios.LiveReg.Servicio
                     
                     foreach (LiveRegType lvr in listaFiltrada2)
                     {
-                        TimeSpan res = (new TimeSpan(8, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        // TimeSpan res = (new TimeSpan(8, 48, 0)) - (lvr.HoraSalida - lvr.HoraEntrada - lvr.TiempoDescansoAcumulado); // + pausa acumulada
+                        TimeSpan res = (new TimeSpan(9, 0, 0)) - (lvr.HoraSalida - lvr.HoraEntrada); // sin pausa acumulada
                         horasCompensar += res;
                     }
                     break;
@@ -114,7 +117,7 @@ namespace appHorarios.LiveReg.Servicio
 
         public TimeSpan CalcularHorarioSalidaCompensado(TimeSpan comp, TimeSpan horaEntrada)
         {
-            TimeSpan ret = horaEntrada + new TimeSpan(9, 0, 0) - comp;
+            TimeSpan ret = horaEntrada + new TimeSpan(9, 0, 0) + comp;
             return ret;
         }
 

@@ -31,7 +31,7 @@ namespace appHorarios.LiveReg
                 btnMarcarEntrada.Enabled = false;
             }
 
-            comboBox1.SelectedItem = "Semanal";
+            comboBox1.SelectedItem = "Mensual";
             _timerFechaHora = new Timer { Interval = 1000 };
             _timerFechaHora.Tick += new EventHandler(OnTimerTick);
             _timerFechaHora.Start();
@@ -93,10 +93,13 @@ namespace appHorarios.LiveReg
 
         private String GetHorarioSalidaAproximado()
         {
+            //String resultado = (
+            //    _registro.HoraEntrada + 
+            //    _registro.TiempoDescansoAcumulado + 
+            //    new TimeSpan(8, 48, 0)).ToString(@"hh\:mm\:ss");
             String resultado = (
-                _registro.HoraEntrada + 
-                _registro.TiempoDescansoAcumulado + 
-                new TimeSpan(8, 0, 0)).ToString(@"hh\:mm\:ss");
+                _registro.HoraEntrada +
+                new TimeSpan(9, 0, 0)).ToString(@"hh\:mm\:ss");
             return resultado;
         }
 
